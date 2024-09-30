@@ -13,44 +13,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-
-<body class="font-playfair">
-    <section class="relative h-screen">
-        <div class="absolute inset-0 bg-cover bg-center bg-fixed z-0"
-            style="background-image: url('img/fondo_horario.webp');"></div>
+<body class="bg-cover bg-center min-h-screen" style="background-image: url('img/fondo_horario.webp');">
+        <div class="absolute inset-0 bg-black bg-opacity-50 z-0"></div> <!-- Overlay negro con opacidad -->
 
         <header class="relative z-10">
             <div class="w-[20%] pt-4 px-4">
-                <img src="img/logo.png" alt="Logo del restaurante">
+               <a href="./main.html"> <img src="img/logo.png" alt="Logo del restaurante"></a> 
             </div>
         </header>
-
+ 
         <!-- Navbar -->
         <nav class="bg-gray-800 p-4 relative z-10">
             <div class="container mx-auto flex justify-between items-center">
-               
-                
                 <!-- Botón del menú (siempre visible) -->
                 <button id="menu-btn" class="text-naranja-quemado text-2xl focus:outline-none">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
-    
+
             <div id="dropdown-menu" class="hidden bg-naranja-quemado text-blanco-humo">
                 <ul class="space-y-4 p-4">
-                    <li><a href="horario.html" class="block hover:text-white">Horario</a></li>
+                    <li><a href="./horario.html" class="block hover:text-white">Horario</a></li>
                     <li><a href="#" class="block hover:text-white">Especialidades</a></li>
                     <li><a href="#" class="block hover:text-white">Bodegas</a></li>
                     <li><a href="#" class="block hover:text-white">Contacto</a></li>
                 </ul>
             </div>
         </nav>
-    
+
         <!-- Script para mostrar/ocultar el menú -->
         <script>
             const menuBtn = document.getElementById('menu-btn');
             const dropdownMenu = document.getElementById('dropdown-menu');
-    
+
             menuBtn.addEventListener('click', () => {
                 dropdownMenu.classList.toggle('hidden');
             });
@@ -119,21 +114,21 @@
 
                 <!-- Texto centrado -->
                 <div class="flex-grow flex justify-center space-x-6">
-                    <a href="tel:+34639432274" class="text-lg text-gray-600 hover:text-white"> <i
-                            class="fas fa-phone-alt mr-2"></i> 639432274</a>
+                    <a href="tel:+34639432274" class="text-lg text-gray-600 hover:text-white"> 
+                        <i class="fas fa-phone-alt mr-2"></i> 639432274
+                    </a>
 
-                    <a href="mailto:cordongallardo@hotmail.es" class="text-lg text-gray-600 hover:text-white"> <i
-                            class="fas fa-envelope mr-2"></i> cordongallardo@hotmail.es</a>
+                    <a href="mailto:cordongallardo@hotmail.es" class="text-lg text-gray-600 hover:text-white">
+                        <i class="fas fa-envelope mr-2"></i> cordongallardo@hotmail.es
+                    </a>
 
                     <a href="https://www.bing.com/maps?q=restaurante+aloha+castillo+de+locubin&FORM=HDRSC6&cp=37.527113%7E-3.953244&lvl=17.9"
                         target="_blank" class="text-lg text-gray-600 hover:text-white">
-                        <i class="fas fa-map-marker-alt mr-2"></i> Castillo de Locubín, JaénCastillo de Locubín,
-                        Jaén</a>
+                        <i class="fas fa-map-marker-alt mr-2"></i> Castillo de Locubín, Jaén
+                    </a>
                 </div>
             </div>
         </footer>
-
-    </section>
 
 </body>
 

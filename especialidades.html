@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especialidades</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="bg-cover bg-center min-h-screen" style="background-image: url('img/fondo_horario.webp');">
+        <div class="absolute inset-0 bg-black bg-opacity-50 z-0"></div> <!-- Overlay negro con opacidad -->
+
+        <header class="relative z-10">
+            <div class="w-[20%] pt-4 px-4">
+               <a href="./main.html"> <img src="img/logo.png" alt="Logo del restaurante"></a> 
+            </div>
+        </header>
+ 
+        <!-- Navbar -->
+        <nav class="bg-gray-800 p-4 relative z-10">
+            <div class="container mx-auto flex justify-between items-center">
+                <!-- Botón del menú (siempre visible) -->
+                <button id="menu-btn" class="text-naranja-quemado text-2xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <div id="dropdown-menu" class="hidden bg-naranja-quemado text-blanco-humo">
+                <ul class="space-y-4 p-4">
+                    <li><a href="./horario.html" class="block hover:text-white">Horario</a></li>
+                    <li><a href="./especialidades.html" class="block hover:text-white">Especialidades</a></li>
+                    <li><a href="./bodegas.html" class="block hover:text-white">Bodegas</a></li>
+                    <li><a href="./contacto.html" class="block hover:text-white">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Script para mostrar/ocultar el menú -->
+        <script>
+            const menuBtn = document.getElementById('menu-btn');
+            const dropdownMenu = document.getElementById('dropdown-menu');
+
+            menuBtn.addEventListener('click', () => {
+                dropdownMenu.classList.toggle('hidden');
+            });
+        </script>
+
+        <main class="relative z-10">
+            <div class="schedule text-center my-12 mx-auto font-sans text-5xl">
+                <h2 class="text-2xl text-white mb-5"> Horario de Apertura</h2>
+
+                <div class="pt-6">
+                    <i class="fas fa-clock mr-2 text-white"></i>
+                    <span class="mx-4 text-white">Lunes:</span>
+                    <span class="mx-4 text-white">Cerrado</span>
+                </div>
+
+                <div class="pt-6">
+                    <i class="fas fa-clock mr-2 text-white"></i>
+                    <span class="mx-4 text-white">Martes:</span>
+                    <span class="mx-4 text-white">12:30 - 17:00</span>
+                </div>
+
+                <div class="pt-6">
+                    <i class="fas fa-clock mr-2 text-white"></i>
+                    <span class="mx-4 text-white">Miércoles:</span>
+                    <span class="mx-4 text-white">12:30-17:00</span>
+                </div>
+
+                <div class="pt-6">
+                    <i class="fas fa-clock mr-2 text-white"></i>
+                    <span class="mx-4 text-white">Jueves:</span>
+                    <span class="mx-4 text-white">12:30-17:00</span>
+                </div>
+
+                <div class="pt-6">
+                    <i class="fas fa-clock mr-2 text-white"></i>
+                    <span class="mx-4 text-white">Viernes:</span>
+                    <span class="mx-4 text-white">12:30-17:00 y 20:00-Cierre</span>
+                </div>
+
+                <div class="pt-6">
+                    <i class="fas fa-clock mr-2 text-white"></i>
+                    <span class="mx-4 text-white">Sábado:</span>
+                    <span class="mx-4 text-white">12:30-17:00 y 20:00-Cierre</span>
+                </div>
+
+                <div class="pt-6">
+                    <i class="fas fa-clock mr-2 text-white"></i>
+                    <span class="mx-4 text-white">Domingo:</span>
+                    <span class="mx-4 text-white">12:30-18:00</span>
+                </div>
+            </div>
+        </main>
+
+        <footer class="relative z-10 bg-black text-center text-white py-[3%]">
+            <div class="flex justify-between items-center px-20">
+
+                <div class="flex space-x-6">
+                    <a href="https://www.instagram.com/rest_aloha" target="_blank">
+                        <i class="fab fa-instagram text-3xl text-gray-600 hover:text-white"></i>
+                    </a>
+
+                    <a href="https://www.facebook.com/rest_aloha" target="_blank">
+                        <i class="fab fa-facebook text-3xl text-gray-600 hover:text-white"></i>
+                    </a>
+                </div>
+
+                <!-- Texto centrado -->
+                <div class="flex-grow flex justify-center space-x-6">
+                    <a href="tel:+34639432274" class="text-lg text-gray-600 hover:text-white"> 
+                        <i class="fas fa-phone-alt mr-2"></i> 639432274
+                    </a>
+
+                    <a href="mailto:cordongallardo@hotmail.es" class="text-lg text-gray-600 hover:text-white">
+                        <i class="fas fa-envelope mr-2"></i> cordongallardo@hotmail.es
+                    </a>
+
+                    <a href="https://www.bing.com/maps?q=restaurante+aloha+castillo+de+locubin&FORM=HDRSC6&cp=37.527113%7E-3.953244&lvl=17.9"
+                        target="_blank" class="text-lg text-gray-600 hover:text-white">
+                        <i class="fas fa-map-marker-alt mr-2"></i> Castillo de Locubín, Jaén
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+</body>
+
+</html>
