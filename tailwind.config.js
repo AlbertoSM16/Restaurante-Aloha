@@ -1,6 +1,6 @@
 module.exports = {
   content: [
-    './src/**/*.{html,js}',  // Cambia esto según la estructura de tu proyecto
+    './src/**/*.{html,js}',  // Asegúrate de que Tailwind vea tus archivos HTML y JS
   ],
   theme: {
     extend: {
