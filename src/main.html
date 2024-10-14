@@ -5,17 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurante Aloha</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">    
+    <link rel="stylesheet" href="./styles.css">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-cover bg-center min-h-screen" style="background-image: url('../img/fondo_horario.webp');">
-    <header class="relative z-10">
-        <div class="w-[20%] pt-4 px-4">
+    <header class="relative z-10 bg-black py-4 px-6 flex items-center">
+        <div class="pl-[2%] pb-[1%] w-[15%]">
+          <a href="./main.html">
             <img src="../img/logo.png" alt="Logo del restaurante">
+          </a>
+        </div>
+      
+        <div class="flex-grow pl-[23%]" >
+          <h1 class="text-white sm:text-4xl md:text-5xl lg:text-6xl italic">Restaurante Aloha</h1>
         </div>
     </header>
-
     <nav class="menu_nav">
         <ul>
             <li><a href="./horario.html">Horario</a></li>
@@ -25,7 +31,35 @@
     </nav>
 
     <main class="text-white">
-        <!-- Contenido del sitio web -->
+        <!-- TEXTO CON LA FRASE -->
+        
+        
+        <div class="text-center px-[5%] py-[1%] rounded-lg shadow-lg">
+            <p class="text-orange-300 sm:text-1xl md:text-5xl lg:text-6xl italic font-extrabold mb-4">
+                "La verdadera receta del éxito en un restaurante no está en la calidad de los platos, sino en la pasión por servir 
+                y crear experiencias memorables para cada comensal"
+            </p>
+            <span class="block text-right text-orange-300 font-bold">- Rafael Cordón</span>
+        </div>
+              
+        <!-- CARRUSEL DE IMAGENES -->
+
+        <div class="relative overflow-hidden w-[20%] max-w-4xl mx-auto">
+            <!-- Contenedor de Imágenes -->
+            <div id="carousel" class="flex transition-transform duration-700 ease-in-out">
+              <img src="../img/logo.png" alt="Imagen 1" class="w-full object-cover">
+              <img src="../img/foto_terraza.jpeg" alt="Imagen 2" class="w-full object-cover">
+              <img src="../img/fondo_horario.webp" alt="Imagen 3" class="w-full object-cover">
+            </div>
+            <button id="prev" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-transparent text-white p-2 rounded-full">
+              &#8592;
+            </button>
+            <button id="next" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-transparent text-white p-2 rounded-full">
+              &#8594;
+            </button>
+          </div>
+          
+          
     </main>
 
     <footer class="relative z-10 bg-black text-center text-white py-8">
@@ -55,6 +89,36 @@
             </div>
         </div>
     </footer>
-
+    <script>
+        const carousel = document.getElementById('carousel');
+        const nextButton = document.getElementById('next');
+        const prevButton = document.getElementById('prev');
+        let index = 0;
+      
+        nextButton.addEventListener('click', () => {
+          if (index < carousel.children.length - 1) {
+            index++;
+            updateCarousel();
+          } else {
+            index = 0; // Reiniciar al inicio
+            updateCarousel();
+          }
+        });
+      
+        prevButton.addEventListener('click', () => {
+          if (index > 0) {
+            index--;
+            updateCarousel();
+          } else {
+            index = carousel.children.length - 1; // Ir al final
+            updateCarousel();
+          }
+        });
+      
+        function updateCarousel() {
+          const offset = -index * 100; // Calcular el desplazamiento basado en el índice
+          carousel.style.transform = `translateX(${offset}%)`;
+        }
+      </script>
 </body>
 </html>

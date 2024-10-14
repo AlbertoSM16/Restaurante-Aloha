@@ -18,6 +18,9 @@
         fontFamily: {
           'playfair': ['Playfair Display', 'serif'],  // Fuente personalizada
         },
+        fontSize: {
+          'titulo':'40%',
+        },
       },
     },
     plugins: [],

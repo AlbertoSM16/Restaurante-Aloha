@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.naranja-quemado:{
+    color:#C75C27;
+}
