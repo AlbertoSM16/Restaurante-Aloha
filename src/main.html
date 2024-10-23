@@ -1,124 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurante Aloha</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">    
-    <link rel="stylesheet" href="./styles.css">
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurante Aloha</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:ital@1&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="./styles.css">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-cover bg-center min-h-screen" style="background-image: url('../img/fondo_horario.webp');">
-    <header class="relative z-10 bg-black py-4 px-6 flex items-center">
-        <div class="pl-[2%] pb-[1%] w-[15%]">
-          <a href="./main.html">
-            <img src="../img/logo.png" alt="Logo del restaurante">
-          </a>
-        </div>
-      
-        <div class="flex-grow pl-[23%]" >
-          <h1 class="text-white sm:text-4xl md:text-5xl lg:text-6xl italic">Restaurante Aloha</h1>
-        </div>
-    </header>
-    <nav class="menu_nav">
-        <ul>
-            <li><a href="./horario.html">Horario</a></li>
-            <li><a href="./especialidades.html">Especialidades</a></li>
-            <li><a href="./bodegas.html">Bodegas</a></li>
+<body class="bg-cover bg-center min-h-screen flex flex-col justify-between"
+  style="background-image: url('../img/fondo_horario.webp');">
+  <header class="relative z-10 bg-black py-4 px-6 flex items-center">
+    <div class="relative pl-[2%] pb-[1%] w-[15%]">
+      <a href="./main.html">
+        <img src="../img/logo.png" alt="Logo del restaurante">
+      </a>
+      <!-- Menú lateral oculto inicialmente, se posiciona debajo del logo -->
+      <div id="side-menu"
+        class="absolute left-0 top-full w-64 bg-gray-900 text-white p-4 transform -translate-x-full transition-transform duration-300 z-50">
+        <ul class="space-y-4">
+          <li><a href="./horario.html" class="block p-2 hover:bg-gray-700 rounded-md">Horario</a></li>
+          <li><a href="./especialidades.html" class="block p-2 hover:bg-gray-700 rounded-md">Especialidades</a></li>
+          <li><a href="./bodegas.html" class="block p-2 hover:bg-gray-700 rounded-md">Bodegas</a></li>
+          <li><a href="./contacto.html" class="block p-2 hover:bg-gray-700 rounded-md">Contacto</a></li>
         </ul>
-    </nav>
+      </div>
+    </div>
 
-    <main class="text-white">
-        <!-- TEXTO CON LA FRASE -->
-        
-        
-        <div class="text-center px-[5%] py-[1%] rounded-lg shadow-lg">
-            <p class="text-orange-300 sm:text-1xl md:text-5xl lg:text-6xl italic font-extrabold mb-4">
-                "La verdadera receta del éxito en un restaurante no está en la calidad de los platos, sino en la pasión por servir 
-                y crear experiencias memorables para cada comensal"
-            </p>
-            <span class="block text-right text-orange-300 font-bold">- Rafael Cordón</span>
-        </div>
-              
-        <!-- CARRUSEL DE IMAGENES -->
+    <div class="flex-grow pl-[23%]">
+      <h1 class="text-white sm:text-4xl md:text-5xl lg:text-6xl italic">Restaurante Aloha</h1>
+    </div>
 
-        <div class="relative overflow-hidden w-[20%] max-w-4xl mx-auto">
-            <!-- Contenedor de Imágenes -->
-            <div id="carousel" class="flex transition-transform duration-700 ease-in-out">
-              <img src="../img/logo.png" alt="Imagen 1" class="w-full object-cover">
-              <img src="../img/foto_terraza.jpeg" alt="Imagen 2" class="w-full object-cover">
-              <img src="../img/fondo_horario.webp" alt="Imagen 3" class="w-full object-cover">
-            </div>
-            <button id="prev" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-transparent text-white p-2 rounded-full">
-              &#8592;
-            </button>
-            <button id="next" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-transparent text-white p-2 rounded-full">
-              &#8594;
-            </button>
-          </div>
-          
-          
-    </main>
+    <!-- Botón de hamburguesa -->
+    <button id="menu-btn" class="bg-gray-700 hover:bg-white p-2 rounded-md focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </header>
 
-    <footer class="relative z-10 bg-black text-center text-white py-8">
-        <div class="flex justify-between items-center px-20">
-            <div class="flex space-x-6">
-                <a href="https://www.instagram.com/rest_aloha" target="_blank">
-                    <i class="fab fa-instagram text-3xl text-gray-600 hover:text-white"></i>
-                </a>
-                <a href="https://www.facebook.com/rest_aloha" target="_blank">
-                    <i class="fab fa-facebook text-3xl text-gray-600 hover:text-white"></i>
-                </a>
-            </div>
+  <main class="text-white font-serif">
+    <!-- Contenido principal -->
+    <div class="text-center pt-[2%]">
+      <p class="font-serif italic sm:text-2xl md:text-3xl lg:text-4xl text-gray-400">Comida</p>
+      <p class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white">Tradicional</p>
 
-            <div class="flex-grow flex justify-center space-x-6">
-                <a href="tel:+34639432274" class="text-lg text-gray-600 hover:text-white">
-                    <i class="fas fa-phone-alt mr-2"></i> 639432274
-                </a>
+    </div>
 
-                <a href="mailto:cordongallardo@hotmail.es" class="text-lg text-gray-600 hover:text-white">
-                    <i class="fas fa-envelope mr-2"></i> cordongallardo@hotmail.es
-                </a>
+    <div class="text-center pt-[2%] px-[20%] rounded-lg pb-[3%] shadow-lg">
+      <p class="text-orange-300  text-base:text-xs sm:text-lg md:text-2xl lg:text-3xl italic mb-[1%]">
+        "La verdadera receta del éxito en un restaurante no está en la calidad de los platos, sino en la pasión por
+        servir
+        y crear experiencias memorables para cada comensal"
+      </p>
+      <span class="block text-right text-orange-300  sm:text-xs md:text-lg lg:text-1xl">- Rafael Cordón</span>
+    </div>
 
-                <a href="https://www.bing.com/maps?q=restaurante+aloha+castillo+de+locubin&FORM=HDRSC6&cp=37.527113%7E-3.953244&lvl=17.9"
-                    target="_blank" class="text-lg text-gray-600 hover:text-white">
-                    <i class="fas fa-map-marker-alt mr-2"></i> Castillo de Locubín, Jaén
-                </a>
-            </div>
-        </div>
-    </footer>
-    <script>
-        const carousel = document.getElementById('carousel');
-        const nextButton = document.getElementById('next');
-        const prevButton = document.getElementById('prev');
-        let index = 0;
+    <!-- CARRUSEL DE IMAGENES -->
+    <div class="relative overflow-hidden w-10/12 max-w-xl mx-auto">
+      <div id="carousel" class="flex transition-transform duration-800 ease-out">
+        <img src="../img/logo.png" alt="Imagen 1" class="w-full object-cover">
+        <img src="../img/foto_terraza.jpeg" alt="Imagen 2" class="w-full object-cover">
+        <img src="../img/fondo_horario.webp" alt="Imagen 3" class="w-full object-cover">
+      </div>
       
-        nextButton.addEventListener('click', () => {
-          if (index < carousel.children.length - 1) {
-            index++;
-            updateCarousel();
-          } else {
-            index = 0; // Reiniciar al inicio
-            updateCarousel();
-          }
-        });
+      <button id="prev"
+        class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-transparent text-white p-2 rounded-full">
+        &#8592;
+      </button>
       
-        prevButton.addEventListener('click', () => {
-          if (index > 0) {
-            index--;
-            updateCarousel();
-          } else {
-            index = carousel.children.length - 1; // Ir al final
-            updateCarousel();
-          }
-        });
-      
-        function updateCarousel() {
-          const offset = -index * 100; // Calcular el desplazamiento basado en el índice
-          carousel.style.transform = `translateX(${offset}%)`;
-        }
-      </script>
+      <button id="next"
+        class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-transparent text-white p-2 rounded-full">
+        &#8594;
+      </button>
+    </div>
+    
+
+  </main>
+
+  <footer class="w-full bg-black text-center text-white py-8 mt-auto">
+    <div class="flex flex-col md:flex-row justify-between items-center px-4 md:px-20">
+
+      <!-- Redes Sociales -->
+      <div class="flex space-x-6 mb-4 md:mb-0">
+        <a href="https://www.instagram.com/rest_aloha" target="_blank">
+          <i class="fab fa-instagram text-2xl md:text-3xl text-gray-600 hover:text-white"></i>
+        </a>
+        <a href="https://www.facebook.com/rest_aloha" target="_blank">
+          <i class="fab fa-facebook text-2xl md:text-3xl text-gray-600 hover:text-white"></i>
+        </a>
+      </div>
+
+      <div class="flex-grow flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+        <a href="tel:+34639432274" class="text-base md:text-lg text-gray-600 hover:text-white">
+          <i class="fas fa-phone-alt mr-2"></i> 639432274
+        </a>
+        <a href="mailto:cordongallardo@hotmail.es" class="text-base md:text-lg text-gray-600 hover:text-white">
+          <i class="fas fa-envelope mr-2"></i> cordongallardo@hotmail.es
+        </a>
+        <a href="https://www.bing.com/maps?q=restaurante+aloha+castillo+de+locubin&FORM=HDRSC6&cp=37.527113%7E-3.953244&lvl=17.9"
+          target="_blank" class="text-base md:text-lg text-gray-600 hover:text-white">
+          <i class="fas fa-map-marker-alt mr-2"></i> Castillo de Locubín, Jaén
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Script para mostrar/ocultar el menú lateral -->
+  <script>
+    
+    const carousel = document.getElementById('carousel');
+  const images = carousel.children;
+  const totalImages = images.length;
+  let index = 0;
+
+  // Botones
+  const prevButton = document.getElementById('prev');
+  const nextButton = document.getElementById('next');
+
+  // Avanzar al siguiente slide
+  nextButton.addEventListener('click', () => {
+    if (index < totalImages - 1) {
+      index++;
+    } else {
+      index = 0; // Volver al principio si llegamos al final
+    }
+    updateCarousel();
+  });
+
+  // Volver al slide anterior
+  prevButton.addEventListener('click', () => {
+    if (index > 0) {
+      index--;
+    } else {
+      index = totalImages - 1; // Ir al último slide si estamos en el primero
+    }
+    updateCarousel();
+  });
+
+  // Función para actualizar el carrusel
+  function updateCarousel() {
+    const offset = -index * 100; // Desplazar según el índice
+    carousel.style.transform = `translateX(${offset}%)`;
+  }
+  </script>
 </body>
+
 </html>

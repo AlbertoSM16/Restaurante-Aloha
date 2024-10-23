@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horario de Apertura</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="output.css">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class=" font-serif bg-cover bg-center min-h-screen flex flex-col justify-between"
+  style="background-image: url('../img/fondo_horario.webp');">
+  <div class="absolute inset-0 bg-black bg-opacity-50 z-0"></div> <!-- Overlay negro con opacidad -->
+
+  <header class="relative z-10 bg-black py-4 px-6 flex items-center">
+    <div class="pl-[1%] pb-[1%] w-[20%]">
+      <a href="./main.html">
+        <img src="../img/logo.png" alt="Logo del restaurante">
+      </a>
+    </div>
+
+    <div class="flex-grow pl-[15%]">
+      <h1 class="text-white text-2xl md:text-5xl lg:text-6xl italic">Restaurante Aloha</h1>
+    </div>
+  </header>
+  <div class="hamburger fixed bottom-4 left-4 z-50 bg-black text-white p-4 rounded-full">
+    <a href="./navegador.html" id="link"><i class="fas fa-bars text-2xl"></i></a>
+    <!-- Icono de hamburguesa de FontAwesome -->
+  </div>
+
+  </div>
+
+
+  </header>
+
+  <main class="font-serif relative z-10 flex flex-col">
+    <div class="text-white mt-[7%] ">
+      <h3 class="text-center text-xl font-serif mb-[2%]">PUEDES ENCONTRARNOS   ...</h3>
+      <div class="text-center">
+        <p class="text-lg ml[5%]">📍Polígono Industrial "El Cerezo"</p>
+        <p>Castillo de Locubín</p>
+      </div>
+    </div>
+    <div>
+      <iframe class="ml-[6%]"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.1790582232807!2d-3.955544023528061!3d37.52727617204885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6de906df410bab%3A0xd9a14afb510c2d84!2sRestaurante%20Aloha!5e0!3m2!1ses!2ses!4v1729531874169!5m2!1ses!2ses"
+        width="330" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="schedule text-center my-[1%] mx-auto text-3xl md:text-4xl lg:text-5xl">
+      <h2 class="text-2xl font-semibold md:text-2xl text-white mb-[1%]">Horario de Apertura</h2>
+
+      <div class="pt-[1%] pb-[1%]">
+        <i class="fas fa-clock mr-[1%] text-white"></i>
+        <span class="mx-[1%] text-white">Lunes:</span>
+        <span class="mx-[1%] text-white">Cerrado</span>
+      </div>
+
+      <div class="pt-[1%] pb-[1%]">
+        <i class="fas fa-clock mr-[1%] text-white"></i>
+        <span class="mx-[1%] text-white">Martes:</span>
+        <span class="mx-[1%] text-white">12:30 - 17:00</span>
+      </div>
+
+      <div class="pt-[1%]  pb-[1%]">
+        <i class="fas fa-clock mr-[1%] text-white"></i>
+        <span class="mx-[1%] text-white">Miércoles:</span>
+        <span class="mx-[1%] text-white">12:30-17:00</span>
+      </div>
+
+      <div class="pt-[1%]  pb-[1%]">
+        <i class="fas fa-clock mr-[1%] text-white"></i>
+        <span class="mx-[1%] text-white">Jueves:</span>
+        <span class="mx-[1%] text-white">12:30-17:00</span>
+      </div>
+
+      <div class="pt-[1%]  pb-[1%]">
+        <i class="fas fa-clock mr-[1%] text-white"></i>
+        <span class="mx-[1%] text-white">Viernes:</span>
+        <span class="mx-[1%] text-white">12:30-17:00 y 20:00-Cierre</span>
+      </div>
+
+      <div class="pt-[1%]  pb-[1%]">
+        <i class="fas fa-clock mr-[1%] text-white"></i>
+        <span class="mx-[1%] text-white">Sábado:</span>
+        <span class="mx-[1%] text-white">12:30-17:00 y 20:00-Cierre</span>
+      </div>
+
+      <div class="pt-[1%] pb-[2%]">
+        <i class="fas fa-clock mr-[1%] text-white"></i>
+        <span class="mx-[1%] text-white">Domingo:</span>
+        <span class="mx-[1%] text-white">12:30-18:00</span>
+      </div>
+    </div>
+  </main>
+
+
+
+
+
+  <footer class="w-full bg-black text-center text-white py-8 mt-auto">
+    <div class="flex flex-col md:flex-row justify-between items-center px-4 md:px-20">
+
+      <!-- Redes Sociales -->
+      <div class="flex space-x-6 mb-4 md:mb-0">
+        <a href="https://www.instagram.com/rest_aloha" target="_blank">
+          <i class="fab fa-instagram text-2xl md:text-3xl text-gray-600 hover:text-white"></i>
+        </a>
+        <a href="https://www.facebook.com/rest_aloha" target="_blank">
+          <i class="fab fa-facebook text-2xl md:text-3xl text-gray-600 hover:text-white"></i>
+        </a>
+      </div>
+
+      <div class="flex-grow flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+        <a href="tel:+34639432274" class="text-base md:text-lg text-gray-600 hover:text-white">
+          <i class="fas fa-phone-alt mr-2"></i> 639432274
+        </a>
+        <a href="mailto:cordongallardo@hotmail.es" class="text-base md:text-lg text-gray-600 hover:text-white">
+          <i class="fas fa-envelope mr-2"></i> cordongallardo@hotmail.es
+        </a>
+        <a href="https://www.bing.com/maps?q=restaurante+aloha+castillo+de+locubin&FORM=HDRSC6&cp=37.527113%7E-3.953244&lvl=17.9"
+          target="_blank" class="text-base md:text-lg text-gray-600 hover:text-white">
+          <i class="fas fa-map-marker-alt mr-2"></i> Castillo de Locubín, Jaén
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Script para mostrar/ocultar el menú lateral -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const sideMenu = document.getElementById('side-menu');
+
+    // Mostrar el menú al hacer clic en el botón de hamburguesa
+    menuBtn.addEventListener('click', () => {
+      sideMenu.classList.toggle('-translate-x-full');
+    });
+
+    // Cerrar el menú al hacer clic fuera de él
+    document.addEventListener('click', (event) => {
+      const isClickInside = sideMenu.contains(event.target) || menuBtn.contains(event.target);
+      if (!isClickInside && !sideMenu.classList.contains('-translate-x-full')) {
+        sideMenu.classList.add('-translate-x-full');
+      }
+    });
+
+    document.getElementById('link').addEventListener('click', function (event) {
+      event.preventDefault(); // Evita la redirección inmediata
+      var content = document.getElementById('content');
+
+      // Añadimos la clase para mostrar el contenido
+      content.classList.add('show');
+
+      // Espera que termine la animación (0.5s en este caso), luego redirige
+      setTimeout(function () {
+        window.location.href = "navegador.html"; // Redirige a la página deseada
+      }, 500); // El tiempo debe coincidir con la duración de la animación
+    });
+  </script>
+
+</body>
+
+</html>

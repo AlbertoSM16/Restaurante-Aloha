@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animación con JavaScript</title>
+    <style>
+        /* Estilos iniciales */
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            transition: transform 0.3s ease-in-out; /* Para que la animación sea suave */
+        }
+
+        /* Estilo para restablecer el estado */
+        a.reset {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li><a href="#" id="animated-link">Haz clic aquí</a></li>
+    </ul>
+
+    <script>
+        // Seleccionamos el elemento <a> por su ID
+        const link = document.getElementById('animated-link');
+
+        // Añadimos un evento que se activa cuando el ratón pasa por encima (hover)
+        link.addEventListener('mouseenter', () => {
+            // Aplicamos la animación de deslizar hacia la derecha
+            link.style.transform = 'translateX(10px)';
+        });
+
+        // Añadimos un evento que se activa cuando el ratón sale del área del enlace
+        link.addEventListener('mouseleave', () => {
+            // Restauramos la posición original
+            link.style.transform = 'translateX(0)';
+        });
+    </script>
+
+</body>
+</html>
