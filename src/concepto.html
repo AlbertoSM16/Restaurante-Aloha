@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurante Aloha</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body
+    class="bg-cover bg-center min-h-screen flex flex-col justify-between"
+    style="background-image: url('../img/fondo_horario.webp')"
+  >
+    <header class="relative z-10 bg-black py-4 px-6 flex flex-col-2 items-center">
+      <div class="relative pl-[2%] pb-[1%] basis-2/6 ">
+        <a href="./main.html">
+          <img class="w-[90%] md:w-[45%]" src="../img/logo.png" alt="Logo del restaurante" />
+        </a>
+      </div>
+
+      <div class="flex-grow basis-4/6 text-center">
+        <h1 class="text-white text-left text-2xl italic md:text-7xl">
+          Restaurante Aloha
+        </h1>
+      </div>
+    </header>
+    <main class="text-white font-serif italic text-center">
+        <!-- Botón de hamburguesa -->
+      
+      <div class="py-[8%] px-[6%] md:py-[2%] md:px-[20%]">
+        <div class="md:px-[40]">
+            <div class="flex flex-col items-center pb-[4%]">
+                <span class="text-3xl absolute italic  text-yellow-400 md:pl-[1%] md:text-5xl">Nuestro</span>
+                <span class="text-4xl pt-[6%] md:pt-[1.6%]  md:text-6xl">Concepto</span>
+            </div>
+            
+            <div class="">
+                <p class="md:text-2xl">
+                Nuestro restaurante tradicional se inspira en la rica herencia
+                gastronómica, rescatando recetas clásicas elevadas con un toque
+                contemporaneo y refinado.
+            </p>
+            <p class="mt-[4%] mb-[6%] md:mt-[0.1%] md:text-2xl ">
+                La herencia de nuestra cocina que cuenta con más de 25 años en el
+                sector, se fusiona con ingredientes de la más alta calidad,
+                cuidadosamente seleccionados por productores locales y sostenibles.
+            </p> 
+            </div>
+           
+        </div>
+        
+        <div class="flex flex-col items-center">
+            <span class="text-3xl absolute italic  text-yellow-400 md:text-5xl">Nuestro</span>
+            <span class="text-4xl pt-[6%] md:pt-[1.6%] md: md:text-6xl">Entorno</span>
+        </div>
+        <div>
+            <p class="mt-[4%] md:text-2xl">El ambiente cálido y sotisficado, evoca la sensación de estar en una antigua casa familiar, 
+                donde la atención al detalle y el servicio personalizado son pilares fundamentales.</p>
+            <p class="md:text-2xl">Nuestro compromiso no es solo con la calidad y la excelencia, sino tambien con la sostenibilidad y la responsabilidad social,
+                integrando prácticas que respeten el entorno y contribuyen al bienestar de la comunidad.
+            </p>
+        </div>
+      </div>
+
+      <!-- CARRUSEL DE IMAGENES -->
+      <div class="relative overflow-hidden w-10/12 max-w-xl mx-auto">
+        <div
+          id="carousel"
+          class="flex transition-transform duration-800 ease-out opacity-100"
+        >
+          <img
+            src="../img/logo.png"
+            alt="Imagen 1"
+            class="w-full object-cover transform scale-100 transition-transform duration-800"
+          />
+          <img
+            src="../img/castillo.jpg"
+            alt="Imagen 1"
+            class="w-full object-cover transform scale-100 transition-transform duration-800"
+          />
+          <img
+            src="../img/foto_terraza.jpeg"
+            alt="Imagen 2"
+            class="w-full object-cover transform scale-100 transition-transform duration-800"
+          />
+          <img
+            src="../img/fondo_horario.webp"
+            alt="Imagen 3"
+            class="w-full object-cover transform scale-100 transition-transform duration-800"
+          />
+        </div>
+      
+        <button
+          id="prev"
+          class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-transparent text-white p-2 rounded-full"
+        >
+          &#8592;
+        </button>
+      
+        <button
+          id="next"
+          class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-transparent text-white p-2 rounded-full"
+        >
+          &#8594;
+        </button>
+      </div>
+    </main>
+    <footer class="w-full bg-black text-center text-white py-8 mt-auto">
+      <div
+        class="flex flex-col md:flex-row justify-between items-center px-4 md:px-20"
+      >
+        <!-- Redes Sociales -->
+        <div class="flex space-x-6 mb-4 md:mb-0">
+          <a href="https://www.instagram.com/rest_aloha" target="_blank">
+            <i
+              class="fab fa-instagram text-2xl md:text-3xl text-yellow-400 hover:text-white"
+            ></i>
+          </a>
+          <a href="https://www.facebook.com/rest_aloha" target="_blank">
+            <i
+              class="fab fa-facebook text-2xl md:text-3xl text-yellow-400 hover:text-white"
+            ></i>
+          </a>
+        </div>
+
+        <div
+          class="flex-grow flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6"
+        >
+          <a
+            href="tel:+34639432274"
+            class="text-base md:text-lg text-yellow-400 hover:text-white"
+          >
+            <i class="fas fa-phone-alt mr-2"></i> 639432274
+          </a>
+          <a
+            href="mailto:cordongallardo@hotmail.es"
+            class="text-base md:text-lg text-yellow-400 hover:text-white"
+          >
+            <i class="fas fa-envelope mr-2"></i> cordongallardo@hotmail.es
+          </a>
+          <a
+            href="https://www.bing.com/maps?q=restaurante+aloha+castillo+de+locubin&FORM=HDRSC6&cp=37.527113%7E-3.953244&lvl=17.9"
+            target="_blank"
+            class="text-base md:text-lg text-yellow-400 hover:text-white"
+          >
+            <i class="fas fa-map-marker-alt mr-2"></i> Castillo de Locubín, Jaén
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const carousel = document.getElementById("carousel");
+  const images = carousel.children;
+  const totalImages = images.length;
+  let index = 0;
+
+  // Botones
+  const prevButton = document.getElementById("prev");
+  const nextButton = document.getElementById("next");
+
+  // Avanzar al siguiente slide
+  nextButton.addEventListener("click", () => {
+    if (index < totalImages - 1) {
+      index++;
+    } else {
+      index = 0; // Volver al principio si llegamos al final
+    }
+    updateCarousel();
+  });
+
+  // Volver al slide anterior
+  prevButton.addEventListener("click", () => {
+    if (index > 0) {
+      index--;
+    } else {
+      index = totalImages - 1; // Ir al último slide si estamos en el primero
+    }
+    updateCarousel();
+  });
+
+  // Función para actualizar el carrusel con fade y zoom
+  function updateCarousel() {
+    // Aplicamos fade-out y zoom-out a la imagen actual antes de cambiar
+    for (let i = 0; i < totalImages; i++) {
+      images[i].classList.remove("opacity-100", "scale-110");
+      images[i].classList.add("opacity-0", "scale-100");
+    }
+
+    // Desplazamos el contenedor del carrusel
+    const offset = -index * 100; // Desplazar según el índice
+    carousel.style.transform = `translateX(${offset}%)`;
+
+    // Esperar 400ms para terminar el fade-out antes de aplicar fade-in y zoom-in
+    setTimeout(() => {
+      images[index].classList.remove("opacity-0", "scale-100");
+      images[index].classList.add("opacity-100", "scale-110");
+    }, 200); // La mitad de la duración de la transición
+  }
+    </script>
+  </body>
+</html>

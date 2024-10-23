@@ -14,23 +14,14 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-cover bg-center min-h-screen flex flex-col justify-between"
-  style="background-image: url('../img/fondo_horario.webp');">
+<body class="bg-cover bg-center min-h-screen flex flex-col justify-between" style="background-image: url('../img/fondo_horario.webp');">
+
   <header class="relative z-10 bg-black py-4 px-6 flex items-center">
     <div class="relative pl-[2%] pb-[1%] w-[15%]">
       <a href="./main.html">
         <img src="../img/logo.png" alt="Logo del restaurante">
       </a>
-      <!-- Menú lateral oculto inicialmente, se posiciona debajo del logo -->
-      <div id="side-menu"
-        class="absolute left-0 top-full w-64 bg-gray-900 text-white p-4 transform -translate-x-full transition-transform duration-300 z-50">
-        <ul class="space-y-4">
-          <li><a href="./horario.html" class="block p-2 hover:bg-gray-700 rounded-md">Horario</a></li>
-          <li><a href="./especialidades.html" class="block p-2 hover:bg-gray-700 rounded-md">Especialidades</a></li>
-          <li><a href="./bodegas.html" class="block p-2 hover:bg-gray-700 rounded-md">Bodegas</a></li>
-          <li><a href="./contacto.html" class="block p-2 hover:bg-gray-700 rounded-md">Contacto</a></li>
-        </ul>
-      </div>
+      
     </div>
 
     <div class="flex-grow pl-[23%]">
@@ -62,24 +53,7 @@
       <span class="block text-right text-orange-300  sm:text-xs md:text-lg lg:text-1xl">- Rafael Cordón</span>
     </div>
 
-    <!-- CARRUSEL DE IMAGENES -->
-    <div class="relative overflow-hidden w-10/12 max-w-xl mx-auto">
-      <div id="carousel" class="flex transition-transform duration-800 ease-out">
-        <img src="../img/logo.png" alt="Imagen 1" class="w-full object-cover">
-        <img src="../img/foto_terraza.jpeg" alt="Imagen 2" class="w-full object-cover">
-        <img src="../img/fondo_horario.webp" alt="Imagen 3" class="w-full object-cover">
-      </div>
-      
-      <button id="prev"
-        class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-transparent text-white p-2 rounded-full">
-        &#8592;
-      </button>
-      
-      <button id="next"
-        class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-transparent text-white p-2 rounded-full">
-        &#8594;
-      </button>
-    </div>
+    
     
 
   </main>
@@ -113,44 +87,7 @@
   </footer>
 
 
-  <!-- Script para mostrar/ocultar el menú lateral -->
-  <script>
-    
-    const carousel = document.getElementById('carousel');
-  const images = carousel.children;
-  const totalImages = images.length;
-  let index = 0;
 
-  // Botones
-  const prevButton = document.getElementById('prev');
-  const nextButton = document.getElementById('next');
-
-  // Avanzar al siguiente slide
-  nextButton.addEventListener('click', () => {
-    if (index < totalImages - 1) {
-      index++;
-    } else {
-      index = 0; // Volver al principio si llegamos al final
-    }
-    updateCarousel();
-  });
-
-  // Volver al slide anterior
-  prevButton.addEventListener('click', () => {
-    if (index > 0) {
-      index--;
-    } else {
-      index = totalImages - 1; // Ir al último slide si estamos en el primero
-    }
-    updateCarousel();
-  });
-
-  // Función para actualizar el carrusel
-  function updateCarousel() {
-    const offset = -index * 100; // Desplazar según el índice
-    carousel.style.transform = `translateX(${offset}%)`;
-  }
-  </script>
 </body>
 
 </html>
