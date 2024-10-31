@@ -5,44 +5,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Horario de Apertura</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="output.css">
-
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Estilos iniciales */
+        /* Animación de aparición gradual */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Clase de aparición para los elementos */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+            animation-delay: 0s;
+        }
+
+        /* Animación de desplazamiento al pasar el mouse */
         a {
             display: inline-block;
             text-decoration: none;
             color: black;
             font-size: 20px;
-            transition: transform 0.5s ease-in-out, color 0.5s ease; /* Para que la animación sea suave */
+            transition: transform 0.5s ease-in-out, color 0.5s ease;
         }
 
-        /* Estilo para restablecer el estado */
+        /* Restablecer el estado */
         a.reset {
             transform: translateX(0);
         }
     </style>
 </head>
 
-<body class="font-serif bg-cover md:bg-auto  min-h-screen flex flex-col justify-start backdrop-blur-sm bg-opacity-70" style="background-image:url('../img/fondo\ nav.jpeg');">
+<body class="font-serif bg-cover min-h-screen flex flex-col justify-start bg-opacity-70"
+    style="background-image: url('../img/fondo_nav.jpeg'); background-size: cover; background-repeat: no-repeat;">
 
-    <header class="flex flex-row-2">
-       
+    <header class="flex flex-row-2 fade-in">
         <a class="pt-[2%] md:ml-[1%] basis-1/3 md:basis-1/6" href="./main.html">
             <img class="md:w-[90%] w-[100%]" src="../img/logo.png">
         </a>
-        <div class="flex flex-col pt-[6%] pl-[8%] text-xl italic basis-1/3 text-gray-600 md:pl-[0.1%] md:pb-[2%] md:basis-1/6 md:text-2xl">
+        <div
+            class="flex flex-col pt-[6%] pl-[8%] text-xl italic basis-1/3 text-gray-600 md:pl-[0.1%] md:pb-[2%] md:basis-1/6 md:text-2xl">
             <p>Tradición</p>
-            <p>Pasión</p>   
+            <p>Pasión</p>
             <p>Sabor</p>
         </div>
-        <div class="mt-[8%] pl-[10%] md:pl-[1%] flex flex-col basis-1/3 ">
+        <div class="mt-[8%] pl-[10%] md:pl-[1%] flex flex-col basis-1/3">
             <div class="mb-[2%]">
                 <a href="https://www.instagram.com/rest_aloha" target="_blank">
                     <i class="fab fa-instagram text-2xl md:text-3xl text-purple-700 hover:text-white"></i>
@@ -50,17 +65,23 @@
             </div>
             <div>
                 <a href="https://www.facebook.com/rest_aloha" target="_blank">
-                <i class="fab fa-facebook text-2xl md:text-3xl text-blue-500 hover:text-white"></i>
+                    <i class="fab fa-facebook text-2xl md:text-3xl text-blue-500 hover:text-white"></i>
                 </a>
-            </div> 
+            </div>
         </div>
-
     </header>
-    <main>
-        <ul class="py-[50%] pl-[20%] md:pl-[8%] md:py-[3%] italic font-playfair font-semibold text-white text-xl md:text-5xl">
-            <li class="my-[5%] md:my-[1%]">
+
+    <main class="fade-in" style="animation-delay: 1s;">
+        <ul
+            class="py-[50%] pl-[20%] md:pl-[8%] md:py-[3%] italic font-playfair font-semibold text-white text-xl md:text-5xl">
+            <li class="my-[5%] md:my-[1%] fade-in" style="animation-delay: 1.5s;">
                 <a href="./navegador.html" class="nav-link hover:text-black md:text-4xl">
                     <p>Concepto</p>
+                </a>
+            </li>
+            <li class="my-[10%] md:my-[1%] fade-in" style="animation-delay: 2s;">
+                <a href="./bodegas.html" class="nav-link hover:text-black md:text-4xl">
+                    <p>Bodegas</p>
                 </a>
             </li>
             <li class="my-[10%] md:my-[1%]">
@@ -84,32 +105,28 @@
                     <p class="leading-snug">El Fogón del Conde</p>
                 </a>
             </li>
-            <li class="my-[10%] md:my-[1%]" >
+            <li class="my-[10%] md:my-[1%]">
                 <a href="./contacto.html" class="nav-link hover:text-black md:text-4xl">
                     <p>Contacto</p>
                 </a>
             </li>
         </ul>
+        <!-- Otros enlaces con animación de aparición gradual -->
+        </ul>
     </main>
-    
-    
+
+    <script>
+        const links = document.querySelectorAll('.nav-link');
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                link.style.transform = 'translateX(25px)';
+            });
+
+            link.addEventListener('mouseleave', () => {
+                link.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
 </body>
 
-<script>
-    // Seleccionamos todos los elementos <a> con la clase 'nav-link'
-    const links = document.querySelectorAll('.nav-link');
-
-    // Añadimos los eventos de animación a cada enlace
-    links.forEach(link => {
-        // Evento al pasar el ratón por encima (hover)
-        link.addEventListener('mouseenter', () => {
-            link.style.transform = 'translateX(25px)'; // Desliza hacia la derecha
-        });
-
-        // Evento cuando el ratón sale del área del enlace
-        link.addEventListener('mouseleave', () => {
-            link.style.transform = 'translateX(0)'; // Vuelve a la posición original
-        });
-    });
-</script>
 </html>
