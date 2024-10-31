@@ -2,65 +2,69 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Restaurante Aloha</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:ital@1&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="./styles.css">
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="./styles.css" />
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-cover bg-center min-h-screen flex flex-col justify-between" style="background-image: url('../img/fondo_horario.webp');">
-
+<body class="bg-cover bg-center min-h-screen flex flex-col justify-between"
+  style="background-image: url('../img/fondo_horario.webp')">
   <header class="relative z-10 bg-black py-4 px-6 flex items-center">
     <div class="relative pl-[2%] pb-[1%] w-[15%]">
       <a href="./main.html">
-        <img src="../img/logo.png" alt="Logo del restaurante">
+        <img src="../img/logo.png" alt="Logo del restaurante" />
       </a>
-      
     </div>
 
     <div class="flex-grow pl-[23%]">
-      <h1 class="text-white sm:text-4xl md:text-5xl lg:text-6xl italic">Restaurante Aloha</h1>
+      <h1 class="text-white sm:text-4xl md:text-5xl lg:text-6xl italic">
+        Restaurante Aloha
+      </h1>
     </div>
 
     <!-- Botón de hamburguesa -->
-    <button id="menu-btn" class="bg-gray-700 hover:bg-white p-2 rounded-md focus:outline-none">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
   </header>
 
   <main class="text-white font-serif">
+    <button id="menu-btn"
+      class="bg-gray-400 hover:bg-white md:ml-[4%] md:mt-[1%] fixed md:p-[0.5%] mt-[2%] ml-[2%] p-[2%] rounded-2xl focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="md:h-8 md:w-8 h-6 w-6" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
     <!-- Contenido principal -->
-    <div class="text-center pt-[2%]">
-      <p class="font-serif italic sm:text-2xl md:text-3xl lg:text-4xl text-gray-400">Comida</p>
-      <p class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white">Tradicional</p>
+    <div>
+      <div class="flex flex-col items-center mt-[4%]">
+        <p class="font-serif italic absolute text-2xl ml-[3%] md:ml-[0.1%] md:text-5xl lg:text-4xl text-gray-400">
+          Comida
+        </p>
+        <p class="font-serif text-3xl mt-[5%] md:mt-[1%] md:text-5xl lg:text-6xl text-white">
+          Tradicional
+        </p>
+      </div>
 
+      <div class="text-center  px-[20%] rounded-lg mt-[5%] pb-[3%] shadow-lg">
+        <p class="text-orange-300 text-base:text-xs sm:text-lg md:text-2xl lg:text-3xl italic mb-[1%]">
+          "La verdadera receta del éxito en un restaurante no está en la
+          calidad de los platos, sino en la pasión por servir y crear
+          experiencias memorables para cada comensal"
+        </p>
+        <span class="block text-right text-orange-300 sm:text-xs md:text-lg lg:text-1xl">- Rafael Cordón</span>
+      </div>
     </div>
-
-    <div class="text-center pt-[2%] px-[20%] rounded-lg pb-[3%] shadow-lg">
-      <p class="text-orange-300  text-base:text-xs sm:text-lg md:text-2xl lg:text-3xl italic mb-[1%]">
-        "La verdadera receta del éxito en un restaurante no está en la calidad de los platos, sino en la pasión por
-        servir
-        y crear experiencias memorables para cada comensal"
-      </p>
-      <span class="block text-right text-orange-300  sm:text-xs md:text-lg lg:text-1xl">- Rafael Cordón</span>
-    </div>
-
-    
-    
-
   </main>
 
   <footer class="w-full bg-black text-center text-white py-8 mt-auto">
     <div class="flex flex-col md:flex-row justify-between items-center px-4 md:px-20">
-
       <!-- Redes Sociales -->
       <div class="flex space-x-6 mb-4 md:mb-0">
         <a href="https://www.instagram.com/rest_aloha" target="_blank">
@@ -85,9 +89,6 @@
       </div>
     </div>
   </footer>
-
-
-
 </body>
 
 </html>
