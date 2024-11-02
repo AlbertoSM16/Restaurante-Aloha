@@ -2,106 +2,164 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Especialidades</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="../src/miestilos.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Especialidades</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="../src/miestilos.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Ocultamos todas las imágenes excepto la activa */
+    .carousel-item {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .carousel-item.active {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+  </style>
 </head>
 
 <body class="font-playfair bg-cover bg-center min-h-screen" style="background-image: url('../img/fondo_horario.webp');">
-        <div class="absolute inset-0 bg-black bg-opacity-50 z-0"></div> <!-- Overlay negro con opacidad -->
+  <div class="absolute inset-0 bg-black bg-opacity-50 z-0"></div> <!-- Overlay negro con opacidad -->
 
-        <header class="relative z-10 bg-black py-4 px-6 flex items-center">
-            <!-- Contenedor de la imagen del logo -->
-            <div class="pl-[2%] pb-[1%] w-[15%]">
-              <a href="./main.html">
-                <img src="../img/logo.png" alt="Logo del restaurante">
-              </a>
-            </div>
-          
-            <!-- Título del restaurante -->
-            <div class="flex-grow pl-[23%]" >
-              <h1 class="text-white sm:text-4xl md:text-5xl lg:text-6xl italic">Restaurante Aloha</h1>
-            </div>
-        </header>
-          
- 
-        <!-- Navbar -->
-        <nav class="bg-gray-800 p-4 relative z-10">
-            <div class="container mx-auto flex justify-between items-center">
-                <!-- Botón del menú (siempre visible) -->
-                <button id="menu-btn" class="text-naranja-quemado text-2xl focus:outline-none">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
+  <header class="relative z-10 bg-black py-4 px-6 flex items-center">
+    <!-- Contenedor de la imagen del logo -->
+    <div class="pl-[2%] pb-[1%] w-[15%]">
+      <a href="./main.html">
+        <img src="../img/logo.png" alt="Logo del restaurante">
+      </a>
+    </div>
 
-            <div id="dropdown-menu" class="hidden bg-naranja-quemado text-blanco-humo">
-                <ul class="space-y-4 p-4">
-                    <li><a href="./horario.html" class="block hover:text-naranja-quemado">Horario</a></li>
-                    <li><a href="./especialidades.html" class="block hover:text-white">Especialidades</a></li>
-                    <li><a href="./bodegas.html" class="block hover:text-white">Bodegas</a></li>
-                    <li><a href="./contacto.html" class="block hover:text-white">Contacto</a></li>
-                </ul>
-            </div>
-        </nav>
+    <!-- Título del restaurante -->
+    <div class="flex-grow pl-[23%]">
+      <h1 class="text-white sm:text-4xl md:text-5xl lg:text-6xl italic">Restaurante Aloha</h1>
+    </div>
+  </header>
+  <main>
+    <button id="menu-btn"
+      class="bg-gray-800 hover:bg-gray-600 fixed md:ml-[4%] md:bottom-40 md:mt-[1%] mt-[130%]  md:p-[1%]  ml-[4%] p-[2%] rounded-2xl focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="md:h-6 md:w-6 h-6 w-6" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
 
-        <!-- Script para mostrar/ocultar el menú -->
-        
+    <!-- Carrusel -->
+    <div class="relative w-full max-w-3xl">
+      <!-- Imágenes del carrusel -->
+      <div id="carousel" class="relative overflow-hidden">
+          <div class="carousel-item active" data-caption="Reservado">
+              <img src="../img/foto_terraza.jpeg" alt="Imagen 1" class="w-full">
+          </div>
+          <div class="carousel-item" data-caption="Salón Principal">
+              <img src="../img/castillo.jpg" alt="Imagen 2" class="w-full">
+          </div>
+          <div class="carousel-item" data-caption="Área Exterior">
+              <img src="https://via.placeholder.com/800x400?text=Imagen+3" alt="Imagen 3" class="w-full">
+          </div>
+      </div>
 
-        <main>
-            <div class="relative z-10 max-w-screen-lg mx-auto p-6 rounded-lg shadow-lg">
-                <h2 class="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-center pb-[5%]">Especialidades</h2>
-                <div class="text-white  sm:text-1xl md:text-2xl lg:text-3xl italic text-center">
-                    
-                    <ul class="">
-                        <li class="py-[2%]">Cochinillo al horno</li>
-                        <li  class="py-[2%]">Tarta de atún rojo de almadraba</li>
-                        <li class="py-[2%]">Amplia gama de mariscos frescos: zamburiñas, berberechos,almeja de carril</li>
-                        <li class="py-[2%]">Solomillo de vacuno raza Angus</li>
-                        <li class="py-[2%]">Revuelto huevos rotos con jamon ibérico y setas de cardo de "Comarca Sierra Sur" (Temporada)</li>
-                        <li class="py-[2%]">Caldereta de bogavante</li>
-                    </ul>
-                </div>
-            </div>
-        </main>
+      <!-- Indicadores -->
+      <div class="absolute bottom-6 left-0 right-0 flex justify-center space-x-2">
+          <span class="indicator bg-gray-500 w-2 h-2 rounded-full cursor-pointer" onclick="goToSlide(0)"></span>
+          <span class="indicator bg-gray-500 w-2 h-2 rounded-full cursor-pointer" onclick="goToSlide(1)"></span>
+          <span class="indicator bg-gray-500 w-2 h-2 rounded-full cursor-pointer" onclick="goToSlide(2)"></span>
+      </div>
 
-        
+      <!-- Pie de foto -->
+      <div id="caption" class="text-center text-white mt-4">Reservado</div>
+
+      <!-- Controles de navegación -->
+      <div class="absolute inset-0 flex justify-between items-center px-4">
+          <button onclick="prevSlide()" class="bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700">
+              &#10094;
+          </button>
+          <button onclick="nextSlide()" class="bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700">
+              &#10095;
+          </button>
+      </div>
+  </div>
+
+
+  <!-- Script para mostrar/ocultar el menú -->
+
+
+
+
+  </main>
+
+
   <footer class="w-full bg-black text-center text-white py-8 mt-auto">
     <div class="flex flex-col md:flex-row justify-between items-center px-4 md:px-20">
-
       <!-- Redes Sociales -->
-      <div class="flex space-x-6 mb-4 md:mb-0">
+      <div class="flex space-x-6 mb-4 md:my-[2%]">
         <a href="https://www.instagram.com/rest_aloha" target="_blank">
-          <i class="fab fa-instagram text-2xl md:text-3xl text-gray-400 hover:text-white"></i>
+          <i class="fab fa-instagram text-2xl md:text-3xl text-white hover:text-white"></i>
         </a>
         <a href="https://www.facebook.com/rest_aloha" target="_blank">
-          <i class="fab fa-facebook text-2xl md:text-3xl text-gray-400 hover:text-white"></i>
+          <i class="fab fa-facebook text-2xl md:text-3xl text-white hover:text-white"></i>
         </a>
       </div>
 
       <div class="flex-grow flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
-        <a href="tel:+34639432274" class="text-base md:text-lg text-gray-400 hover:text-white">
+        <a href="tel:+34639432274" class="text-base md:text-lg text-white hover:text-white">
           <i class="fas fa-phone-alt mr-2"></i> 639432274
         </a>
-        <a href="mailto:cordongallardo@hotmail.es" class="text-base md:text-lg text-gray-400 hover:text-white">
+        <a href="mailto:cordongallardo@hotmail.es" class="text-base md:text-lg text-white hover:text-white">
           <i class="fas fa-envelope mr-2"></i> cordongallardo@hotmail.es
         </a>
         <a href="https://www.bing.com/maps?q=restaurante+aloha+castillo+de+locubin&FORM=HDRSC6&cp=37.527113%7E-3.953244&lvl=17.9"
-          target="_blank" class="text-base md:text-lg text-gray-400 hover:text-white">
+          target="_blank" class="text-base md:text-lg text-whitehover:text-white">
           <i class="fas fa-map-marker-alt mr-2"></i> Castillo de Locubín, Jaén
         </a>
       </div>
     </div>
   </footer>
 
-          
+
 
 </body>
+
+<script>
+  // Variables para el carrusel
+  let currentIndex = 0;
+  const slides = document.querySelectorAll('.carousel-item');
+  const indicators = document.querySelectorAll('.indicator');
+  const caption = document.getElementById('caption');
+
+  // Función para mostrar una imagen específica
+  function showSlide(index) {
+      slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+          indicators[i].classList.toggle('bg-white', i === index);
+          indicators[i].classList.toggle('bg-gray-500', i !== index);
+      });
+      caption.textContent = slides[index].getAttribute('data-caption');
+  }
+
+  // Función para avanzar a la siguiente imagen
+  function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+  }
+
+  // Función para retroceder a la imagen anterior
+  function prevSlide() {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(currentIndex);
+  }
+
+  // Función para ir a una imagen específica mediante el indicador
+  function goToSlide(index) {
+      currentIndex = index;
+      showSlide(currentIndex);
+  }
+</script>
 
 </html>
