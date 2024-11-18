@@ -15,11 +15,48 @@
     <link rel="stylesheet" href="./styles.css" />
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Animación expandiéndose de izquierda a derecha */
+      @keyframes expandAndCover {
+        0% {
+          width: 0;
+          height: 100vh;
+          left: 0;
+          top: 0;
+          opacity: 0.3;
+        }
+  
+        80% {
+          width: 100vw;
+          height: 100vh;
+          left: 0;
+          top: 0;
+          opacity: 0.8;
+        }
+  
+        100% {
+          width: 100vw;
+          height: 100vh;
+          left: 0;
+          top: 0;
+          opacity: 1;
+        }
+      }
+  
+      /* Clase para activar la animación */
+      .expand-animation {
+        animation: expandAndCover 0.6s forwards ease-out;
+        position: fixed;
+        z-index: 50;
+        background-size: cover;
+        background-position: center;
+      }
+    </style>
   </head>
 
   <body
     class="bg-cover bg-center min-h-screen flex flex-col justify-between"
-    style="background-image: url('../img/fondo_horario.webp')"
+    style="background-image: url('../img/fondo_4.webp')"
   >
     <header class="relative z-10 bg-black py-4 px-6 flex flex-col-2 items-center">
       <div class="relative pl-[2%] pb-[1%] basis-2/6 ">
@@ -34,10 +71,16 @@
         </h1>
       </div>
     </header>
-    <main class="text-white font-serif italic text-center">
-        <!-- Botón de hamburguesa -->
-      
-      <div class="py-[8%] px-[6%] md:py-[2%] md:px-[20%]">
+    <main class="text-white font-serif italic">
+       <!-- Botón de hamburguesa -->
+       <button id="menu-btn"
+    class="bg-gray-800 hover:bg-gray-600 fixed md:ml-[4%] md:bottom-40 md:mt-[1%] mt-[130%]  md:p-[1%]  ml-[4%] p-[2%] rounded-2xl focus:outline-none">
+    <svg xmlns="http://www.w3.org/2000/svg" class="md:h-6 md:w-6 h-6 w-6" fill="none" viewBox="0 0 24 24"
+      stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
+      <div class="py-[8%] px-[6%] md:py-[2%] md:px-[20%] text-center">
         <div class="md:px-[40]">
             <div class="flex flex-col items-center pb-[4%]">
                 <span class="text-3xl absolute italic  text-yellow-400 md:pl-[1%] md:text-5xl">Nuestro</span>
@@ -208,6 +251,29 @@
       images[index].classList.add("opacity-100", "scale-110");
     }, 200); // La mitad de la duración de la transición
   }
-    </script>
+  
+    function transitionAndRedirect(url) {
+      const expandDiv = document.createElement('div');
+      expandDiv.className = 'expand-animation';
+      expandDiv.style.position = 'fixed';
+      expandDiv.style.top = '0';
+      expandDiv.style.left = '0';
+      expandDiv.style.width = '0';
+      expandDiv.style.height = '100vh';
+      expandDiv.style.backgroundImage = "url('../img/fondo_nav.jpeg')";
+      expandDiv.style.backgroundSize = 'cover';
+      expandDiv.style.backgroundPosition = 'center';
+      document.body.appendChild(expandDiv);
+
+      setTimeout(() => {
+        window.location.href = url;
+      }, 600);
+    }
+
+    document.getElementById('menu-btn').addEventListener('click', (event) => {
+      event.preventDefault();
+      transitionAndRedirect('./navegador.html');
+    });
+  </script>
   </body>
 </html>

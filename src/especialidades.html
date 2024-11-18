@@ -15,13 +15,14 @@
   <style>
     /* Ocultamos todas las imágenes excepto la activa */
     .carousel-item {
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-        .carousel-item.active {
-            opacity: 1;
-            transition: opacity 0.5s ease-in-out;
-        }
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .carousel-item.active {
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out;
+    }
   </style>
 </head>
 
@@ -49,27 +50,36 @@
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
+    <div class="flex flex-col items-center mt-[15%] md:mt-[5%]">
+      <p class="font-serif italic absolute text-3xl ml-[3%] md:ml-[0.1%] md:text-5xl lg:text-4xl text-yellow-500">
+        Nuestras
+      </p>
+      <p class="font-serif text-3xl mt-[5%]  md:mt-[1.4%] md:text-4xl lg:text-6xl text-red-400">
+        Especialidades
+      </p>
+    </div>
 
+    </div>
     <!-- Carrusel -->
-    <div class="relative w-full max-w-3xl">
+    <div class="relative w-full max-w-3xl"> 
       <!-- Imágenes del carrusel -->
       <div id="carousel" class="relative overflow-hidden">
-          <div class="carousel-item active" data-caption="Reservado">
-              <img src="../img/foto_terraza.jpeg" alt="Imagen 1" class="w-full">
-          </div>
-          <div class="carousel-item" data-caption="Salón Principal">
-              <img src="../img/castillo.jpg" alt="Imagen 2" class="w-full">
-          </div>
-          <div class="carousel-item" data-caption="Área Exterior">
-              <img src="https://via.placeholder.com/800x400?text=Imagen+3" alt="Imagen 3" class="w-full">
-          </div>
+        <div class="carousel-item active" data-caption="Reservado">
+          <img src="../img/foto_terraza.jpeg" alt="Imagen 1" class="w-full">
+        </div>
+        <div class="carousel-item" data-caption="Salón Principal">
+          <img src="../img/castillo.jpg" alt="Imagen 2" class="w-full">
+        </div>
+        <div class="carousel-item" data-caption="Área Exterior">
+          <img src="https://via.placeholder.com/800x400?text=Imagen+3" alt="Imagen 3" class="w-full">
+        </div>
       </div>
 
       <!-- Indicadores -->
       <div class="absolute bottom-6 left-0 right-0 flex justify-center space-x-2">
-          <span class="indicator bg-gray-500 w-2 h-2 rounded-full cursor-pointer" onclick="goToSlide(0)"></span>
-          <span class="indicator bg-gray-500 w-2 h-2 rounded-full cursor-pointer" onclick="goToSlide(1)"></span>
-          <span class="indicator bg-gray-500 w-2 h-2 rounded-full cursor-pointer" onclick="goToSlide(2)"></span>
+        <span class="indicator bg-gray-500 w-2 h-2 rounded-full cursor-pointer" onclick="goToSlide(0)"></span>
+        <span class="indicator bg-gray-500 w-2 h-2 rounded-full cursor-pointer" onclick="goToSlide(1)"></span>
+        <span class="indicator bg-gray-500 w-2 h-2 rounded-full cursor-pointer" onclick="goToSlide(2)"></span>
       </div>
 
       <!-- Pie de foto -->
@@ -77,17 +87,17 @@
 
       <!-- Controles de navegación -->
       <div class="absolute inset-0 flex justify-between items-center px-4">
-          <button onclick="prevSlide()" class="bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700">
-              &#10094;
-          </button>
-          <button onclick="nextSlide()" class="bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700">
-              &#10095;
-          </button>
+        <button onclick="prevSlide()" class="bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700">
+          &#10094;
+        </button>
+        <button onclick="nextSlide()" class="bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700">
+          &#10095;
+        </button>
       </div>
-  </div>
+    </div>
 
 
-  <!-- Script para mostrar/ocultar el menú -->
+    <!-- Script para mostrar/ocultar el menú -->
 
 
 
@@ -135,30 +145,30 @@
 
   // Función para mostrar una imagen específica
   function showSlide(index) {
-      slides.forEach((slide, i) => {
-          slide.classList.toggle('active', i === index);
-          indicators[i].classList.toggle('bg-white', i === index);
-          indicators[i].classList.toggle('bg-gray-500', i !== index);
-      });
-      caption.textContent = slides[index].getAttribute('data-caption');
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+      indicators[i].classList.toggle('bg-white', i === index);
+      indicators[i].classList.toggle('bg-gray-500', i !== index);
+    });
+    caption.textContent = slides[index].getAttribute('data-caption');
   }
 
   // Función para avanzar a la siguiente imagen
   function nextSlide() {
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
   }
 
   // Función para retroceder a la imagen anterior
   function prevSlide() {
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      showSlide(currentIndex);
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
   }
 
   // Función para ir a una imagen específica mediante el indicador
   function goToSlide(index) {
-      currentIndex = index;
-      showSlide(currentIndex);
+    currentIndex = index;
+    showSlide(currentIndex);
   }
 </script>
 

@@ -6,17 +6,19 @@
 	-móvil (done)
 	-portátil(done)
 -bodegas
-	-móvil ()
-	-portátil ()
+	-móvil (espera de fotos)
+	-portátil (espera de fotos)
 -especialiades
-	-móvil
-	-portátil
+	-móvil (espera de fotos)
+	-portátil (espera de fotos)
 -contacto
-	-móvil
-	-portátil
+	-móvil (done)
+	-portátil (done)
 -main
-	-móvil
-	-contacto
+	-móvil (done)
+	-portatil (done)
+
 -catering
-	-móvil
-	-contacto
+	-móvil (done espera de nuevas fotos)
+	-portatil (done espera de nuevas fotos)
+

@@ -13,6 +13,43 @@
 
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Animación expandiéndose de izquierda a derecha */
+    @keyframes expandAndCover {
+      0% {
+        width: 0;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        opacity: 0.3;
+      }
+
+      80% {
+        width: 100vw;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        opacity: 0.8;
+      }
+
+      100% {
+        width: 100vw;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        opacity: 1;
+      }
+    }
+
+    /* Clase para activar la animación */
+    .expand-animation {
+      animation: expandAndCover 0.6s forwards ease-out;
+      position: fixed;
+      z-index: 50;
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
 </head>
 
 <body class=" font-serif bg-cover bg-center min-h-screen flex flex-col justify-between"
@@ -160,7 +197,6 @@
       transitionAndRedirect('./navegador.html');
     });
   </script>
-
 
 </body>
 

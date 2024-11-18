@@ -14,6 +14,11 @@
           'rojo-vino-profundo': '#5C1A1B',   // Rojo vino profundo
           'verde-oliva-oscuro': '#4E5B31',   // Verde oliva oscuro
           'blanco-humo': '#E0E0E0',          // Blanco humo
+          gold: {
+            DEFAULT: '#FFD700', // Dorado estándar
+            light: '#FFEC8B',  // Dorado claro
+            dark: '#B8860B',   // Dorado oscuro
+          },
         },
         fontFamily: {
           'playfair': ['Playfair Display', 'serif'],  // Fuente personalizada
