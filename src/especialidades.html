@@ -2,108 +2,219 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Especialidades</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="../src/miestilos.css" rel="stylesheet">
+  <link href="../src/miestilos.css" rel="stylesheet" />
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
   <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
-    /* Ocultamos todas las imágenes excepto la activa */
-    .carousel-item {
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
+    .carousel-inner {
+      transition: transform 0.5s ease;
     }
 
-    .carousel-item.active {
-      opacity: 1;
-      transition: opacity 0.5s ease-in-out;
+    .carousel-indicator.active {
+      background-color: #333;
     }
   </style>
 </head>
 
-<body class="font-playfair bg-cover bg-center min-h-screen" style="background-image: url('../img/fondo_horario.webp');">
-  <div class="absolute inset-0 bg-black bg-opacity-50 z-0"></div> <!-- Overlay negro con opacidad -->
-
-  <header class="relative z-10 bg-black py-4 px-6 flex items-center">
-    <!-- Contenedor de la imagen del logo -->
-    <div class="pl-[2%] pb-[1%] w-[15%]">
+<body class="font-serif bg-cover bg-center min-h-screen h-full w-full"
+  style="background-image: url('../img/fondo_4.webp')">
+  <header class="relative z-10 bg-black py-4 px-6 flex flex-col-2 items-center">
+    <div class="relative pl-[2%] pb-[1%] basis-2/6">
       <a href="./main.html">
-        <img src="../img/logo.png" alt="Logo del restaurante">
+        <img class="w-[90%] md:w-[45%]" src="../img/logo.png" alt="Logo del restaurante" />
       </a>
     </div>
 
-    <!-- Título del restaurante -->
-    <div class="flex-grow pl-[23%]">
-      <h1 class="text-white sm:text-4xl md:text-5xl lg:text-6xl italic">Restaurante Aloha</h1>
+    <div class="flex-grow basis-4/6 text-center">
+      <h1 class="text-white text-left text-2xl italic md:text-7xl">
+        Restaurante Aloha
+      </h1>
     </div>
   </header>
+
   <main>
     <button id="menu-btn"
-      class="bg-gray-800 hover:bg-gray-600 fixed md:ml-[4%] md:bottom-40 md:mt-[1%] mt-[130%]  md:p-[1%]  ml-[4%] p-[2%] rounded-2xl focus:outline-none">
+      class="bg-gray-800 hover:bg-gray-600 fixed md:ml-[4%] md:bottom-40 md:mt-[1%] mt-[130%] md:p-[1%] ml-[4%] p-[2%] rounded-2xl focus:outline-none">
       <svg xmlns="http://www.w3.org/2000/svg" class="md:h-6 md:w-6 h-6 w-6" fill="none" viewBox="0 0 24 24"
         stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
-    <div class="flex flex-col items-center mt-[15%] md:mt-[5%]">
+    <div class="flex flex-col items-center mt-[15%] md:mt-[5%] mb-[5%]">
       <p class="font-serif italic absolute text-3xl ml-[3%] md:ml-[0.1%] md:text-5xl lg:text-4xl text-yellow-500">
         Nuestras
       </p>
-      <p class="font-serif text-3xl mt-[5%]  md:mt-[1.4%] md:text-4xl lg:text-6xl text-red-400">
+      <p class="font-serif text-3xl mt-[5%] md:mt-[1.4%] md:text-4xl lg:text-6xl text-red-400">
         Especialidades
       </p>
     </div>
 
-    </div>
-    <!-- Carrusel -->
-    <div class="relative w-full max-w-3xl"> 
-      <!-- Imágenes del carrusel -->
-      <div id="carousel" class="relative overflow-hidden">
-        <div class="carousel-item active" data-caption="Reservado">
-          <img src="../img/foto_terraza.jpeg" alt="Imagen 1" class="w-full">
-        </div>
-        <div class="carousel-item" data-caption="Salón Principal">
-          <img src="../img/castillo.jpg" alt="Imagen 2" class="w-full">
-        </div>
-        <div class="carousel-item" data-caption="Área Exterior">
-          <img src="https://via.placeholder.com/800x400?text=Imagen+3" alt="Imagen 3" class="w-full">
-        </div>
-      </div>
-
-      <!-- Indicadores -->
-      <div class="absolute bottom-6 left-0 right-0 flex justify-center space-x-2">
-        <span class="indicator bg-gray-500 w-2 h-2 rounded-full cursor-pointer" onclick="goToSlide(0)"></span>
-        <span class="indicator bg-gray-500 w-2 h-2 rounded-full cursor-pointer" onclick="goToSlide(1)"></span>
-        <span class="indicator bg-gray-500 w-2 h-2 rounded-full cursor-pointer" onclick="goToSlide(2)"></span>
-      </div>
-
-      <!-- Pie de foto -->
-      <div id="caption" class="text-center text-white mt-4">Reservado</div>
-
-      <!-- Controles de navegación -->
-      <div class="absolute inset-0 flex justify-between items-center px-4">
-        <button onclick="prevSlide()" class="bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700">
-          &#10094;
-        </button>
-        <button onclick="nextSlide()" class="bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700">
-          &#10095;
-        </button>
-      </div>
+    <div class="flex flex-col items-center my-[5%]">
+      <p class="font-serif italic text-white text-2xl font-bold">
+        Bajo Reserva
+      </p>
     </div>
 
+    <div class="relative overflow-hidden w-10/12 max-w-xl md:mb-[5%] mb-[10%] mx-auto">
+      <!-- Carousel Inner -->
+      <div id="carousel1" class="carousel-inner flex">
+        <div class="carousel-item min-w-full relative">
+          <img src="../img/caldereta.jpg" alt="Imagen 1" class="w-full" />
+          <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
+            Caldereta de bogavante
+          </div>
+        </div>
+        <div class="carousel-item min-w-full relative">
+          <img src="../img/corvina_horno.JPEG" alt="Imagen 2" class="w-full" />
+          <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
+            Corvina al horno
+          </div>
+        </div>
 
-    <!-- Script para mostrar/ocultar el menú -->
+        <div class="carousel-item min-w-full relative">
+          <img src="../img/Tomahawk.JPEG" alt="Imagen 3" class="w-full" />
+          <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
+            Tomahawk de ternera
+          </div>
+        </div>
+        <div class="carousel-item min-w-full relative">
+          <img src="../img/T-bone.JPEG" alt="Imagen 3" class="w-full" />
+          <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
+            T-Bone de ternera
+          </div>
+        </div>
 
+      </div>
+      <!-- Carousel Controls -->
+      <button onclick="showSlide(-1, 'carousel1')"
+        class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gradient-to-br from-blue-500 to-purple-500 text-white p-4 rounded-full shadow-lg hover:from-purple-500 hover:to-blue-500 transition-all duration-300 focus:outline-none">
+        &#8249;
+      </button>
+      <button onclick="showSlide(1,'carousel1')"
+        class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gradient-to-br from-blue-500 to-purple-500 text-white p-4 rounded-full shadow-lg hover:from-purple-500 hover:to-blue-500 transition-all duration-300 focus:outline-none">
+        &#8250;
+      </button>
 
+      <!-- Carousel Indicators -->
+      <div class="flex justify-center mt-4">
+        <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
+          onclick="currentSlide(0)"></div>
+        <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
+          onclick="currentSlide(1)"></div>
+        <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
+          onclick="currentSlide(2)"></div>
+        <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
+          onclick="currentSlide(3)"></div>
 
+      </div>
+    </div>
 
+    <div class="flex flex-col items-center my-[5%]">
+      <p class="font-serif italic text-white text-2xl font-bold">
+        Especialidades
+      </p>
+    </div>
+
+    <div class="relative overflow-hidden w-10/12 max-w-xl md:mb-[5%] mb-[10%] mx-auto">
+      <!-- Carousel Inner -->
+      <div id="carousel2" class="carousel-inner flex">
+        <div class="carousel-item min-w-full relative">
+          <img src="../img/barco_marisco.JPEG" alt="Imagen 3" class="w-full" />
+          <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
+            Barcos de Marisco
+          </div>
+        </div>
+
+        <div class="carousel-item min-w-full relative">
+          <img src="../img/angus.JPEG" alt="Imagen 2" class="w-full" />
+          <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
+            Solomillo de ternera Raza Angus
+          </div>
+        </div>
+        <div class="carousel-item min-w-full relative">
+          <img src="../img/Tartar.JPEG" alt="Imagen 3" class="w-full" />
+          <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
+            Tartar de Atún Rojo de Almadraba
+          </div>
+        </div>
+        <div class="carousel-item min-w-full relative">
+          <img src="../img/atun rojo.JPEG" alt="Imagen 3" class="w-full" />
+          <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
+            Atun Rojo de Almadraba
+          </div>
+        </div>
+        <div class="carousel-item min-w-full relative">
+          <img src="../img/calamar nacional.JPEG" alt="Imagen 3" class="w-full" />
+          <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
+            Calamar Nacional
+          </div>
+        </div>
+        <div class="carousel-item min-w-full relative">
+          <img src="../img/almejas.JPEG" alt="Imagen 1" class="w-full" />
+          <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
+            Almejas de carril
+          </div>
+        </div>
+        <div class="carousel-item min-w-full relative">
+          <img src="../img/ostras1.JPEG" alt="Imagen 1" class="w-full" />
+          <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
+            Ostras
+          </div>
+        </div>
+        <div class="carousel-item min-w-full relative">
+          <img src="../img/setas.JPEG" alt="Imagen 1" class="w-full" />
+          <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
+            Setas de Cordo "Comarca Sierra Sur" (Temporada)
+          </div>
+        </div>
+        <div class="carousel-item min-w-full relative">
+          <img src="../img/setas_si.JPEG" alt="Imagen 1" class="w-full" />
+          <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
+            Setas de Cordo "Comarca Sierra Sur" (Temporada)
+          </div>
+        </div>
+      </div>
+      <!-- Carousel Controls -->
+      <button onclick="showSlide(-1, 'carousel2')"
+        class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gradient-to-br from-blue-500 to-purple-500 text-white p-4 rounded-full shadow-lg hover:from-purple-500 hover:to-blue-500 transition-all duration-300 focus:outline-none">
+        &#8249;
+      </button>
+      <button onclick="showSlide(1,'carousel2')"
+        class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gradient-to-br from-blue-500 to-purple-500 text-white p-4 rounded-full shadow-lg hover:from-purple-500 hover:to-blue-500 transition-all duration-300 focus:outline-none">
+        &#8250;
+      </button> 
+
+      <!-- Carousel Indicators -->
+      <div class="flex justify-center mt-4">
+        <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
+          onclick="currentSlide(0)"></div>
+        <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
+          onclick="currentSlide(1)"></div>
+        <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
+          onclick="currentSlide(2)"></div>
+        <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
+          onclick="currentSlide(3)"></div>
+        <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
+          onclick="currentSlide(4)"></div>
+        <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
+          onclick="currentSlide(5)"></div>
+        <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
+          onclick="currentSlide(6)"></div>
+        <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
+          onclick="currentSlide(7)"></div>
+        <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
+          onclick="currentSlide(8)"></div>
+
+      </div>
+    </div>
   </main>
-
 
   <footer class="w-full bg-black text-center text-white py-8 mt-auto">
     <div class="flex flex-col md:flex-row justify-between items-center px-4 md:px-20">
@@ -112,7 +223,7 @@
         <a href="https://www.instagram.com/rest_aloha" target="_blank">
           <i class="fab fa-instagram text-2xl md:text-3xl text-white hover:text-white"></i>
         </a>
-        <a href="https://www.facebook.com/rest_aloha" target="_blank">
+        <a href="https://www.facebook.com/people/Restaurante-Aloha/100064768928297/" target="_blank">
           <i class="fab fa-facebook text-2xl md:text-3xl text-white hover:text-white"></i>
         </a>
       </div>
@@ -131,45 +242,106 @@
       </div>
     </div>
   </footer>
-
-
-
 </body>
 
 <script>
-  // Variables para el carrusel
   let currentIndex = 0;
-  const slides = document.querySelectorAll('.carousel-item');
-  const indicators = document.querySelectorAll('.indicator');
-  const caption = document.getElementById('caption');
+  const items = document.querySelectorAll(".carousel-item");
+  const indicators = document.querySelectorAll(".indicator");
 
-  // Función para mostrar una imagen específica
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.toggle('active', i === index);
-      indicators[i].classList.toggle('bg-white', i === index);
-      indicators[i].classList.toggle('bg-gray-500', i !== index);
+  function showSlide(direction, carouselId) {
+    const carousel = document.getElementById(carouselId);
+    const items = carousel.querySelectorAll(".carousel-item");
+    const totalItems = items.length;
+
+    // Obtener índice actual del atributo data-index o inicializarlo en 0
+    let currentIndex = parseInt(carousel.getAttribute("data-index")) || 0;
+
+    // Calcular nuevo índice dependiendo de la dirección
+    currentIndex = (currentIndex + direction + totalItems) % totalItems;
+
+    // Mover carrusel
+    const offset = -currentIndex * 100;
+    carousel.style.transform = `translateX(${offset}%)`;
+
+    // Guardar índice actual
+    carousel.setAttribute("data-index", currentIndex);
+
+    // Actualizar indicadores
+    updateIndicators(carouselId, currentIndex);
+  }
+
+  function updateIndicators(carouselId, currentIndex) {
+    const carousel = document.getElementById(carouselId);
+    const indicators = carousel.parentNode.querySelectorAll(".indicator");
+
+    indicators.forEach((indicator, index) => {
+      if (index === currentIndex) {
+        indicator.classList.add("bg-gray-700");
+        indicator.classList.remove("bg-gray-400");
+      } else {
+        indicator.classList.remove("bg-gray-700");
+        indicator.classList.add("bg-gray-400");
+      }
     });
-    caption.textContent = slides[index].getAttribute('data-caption');
   }
 
-  // Función para avanzar a la siguiente imagen
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % slides.length;
-    showSlide(currentIndex);
+  // Inicialización automática (opcional)
+  function initCarousel(carouselId, interval = 5000) {
+    setInterval(() => {
+      const currentIndex = parseInt(document.getElementById(carouselId).getAttribute("data-index")) || 0;
+      showSlide(1, carouselId);
+    }, interval);
   }
 
-  // Función para retroceder a la imagen anterior
-  function prevSlide() {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    showSlide(currentIndex);
+  // Inicializar carruseles
+  initCarousel("carousel1", 14000);
+  initCarousel("carousel2", 14000);
+
+  function transitionAndRedirect(url) {
+    const expandDiv = document.createElement("div");
+    expandDiv.className = "expand-animation";
+    expandDiv.style.position = "fixed";
+    expandDiv.style.top = "0";
+    expandDiv.style.left = "0";
+    expandDiv.style.width = "0";
+    expandDiv.style.height = "100vh";
+    expandDiv.style.backgroundImage = "url('../img/fondo_nav.jpeg')";
+    expandDiv.style.backgroundSize = "cover";
+    expandDiv.style.backgroundPosition = "center";
+    document.body.appendChild(expandDiv);
+
+    setTimeout(() => {
+      window.location.href = url;
+    }, 600);
   }
 
-  // Función para ir a una imagen específica mediante el indicador
-  function goToSlide(index) {
-    currentIndex = index;
-    showSlide(currentIndex);
+  document.getElementById("menu-btn").addEventListener("click", (event) => {
+    event.preventDefault();
+    transitionAndRedirect("./navegador.html");
+  });
+  function transitionAndRedirect(url) {
+    const expandDiv = document.createElement("div");
+    expandDiv.className = "expand-animation";
+    expandDiv.style.position = "fixed";
+    expandDiv.style.top = "0";
+    expandDiv.style.left = "0";
+    expandDiv.style.width = "0";
+    expandDiv.style.height = "100vh";
+    expandDiv.style.backgroundImage = "url('../img/fondo_nav.jpeg')";
+    expandDiv.style.backgroundSize = "cover";
+    expandDiv.style.backgroundPosition = "center";
+    document.body.appendChild(expandDiv);
+
+    setTimeout(() => {
+      window.location.href = url;
+    }, 600);
   }
+
+  document.getElementById("menu-btn").addEventListener("click", (event) => {
+    event.preventDefault();
+    transitionAndRedirect("./navegador.html");
+  });
 </script>
 
 </html>

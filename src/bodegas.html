@@ -1,102 +1,326 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animación con JavaScript</title>
-    <style>
-        /* Estilos iniciales */
-        a {
-            display: inline-block;
-            text-decoration: none;
-            color: black;
-            font-size: 20px;
-            transition: transform 0.3s ease-in-out; /* Para que la animación sea suave */
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Especialidades</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="../src/miestilos.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    .carousel-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: contain;
+      background-color: black;
+    }
 
-        /* Estilo para restablecer el estado */
-        a.reset {
-            transform: translateX(0);
-        }
-    </style>
+    .carousel-inner {
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-indicator.active {
+      background-color: #333;
+    }
+  </style>
 </head>
-<body>
 
-    <ul>
-        <li><a href="#" id="animated-link">Haz clic aquí</a></li>
-    </ul>
+<body class="font-serif bg-cover bg-center min-h-screen h-full w-full text-white"
+  style="background-image: url('../img/fondo_4.webp')">
+  <header class="relative z-10 bg-black py-4 px-6 flex flex-col-2 items-center">
+    <div class="relative pl-[2%] pb-[1%] basis-2/6">
+      <a href="./main.html">
+        <img class="w-[90%] md:w-[45%]" src="../img/logo.png" alt="Logo del restaurante" />
+      </a>
+    </div>
 
-    <main>
-        <button id="menu-btn"
-        class="bg-gray-800 hover:bg-gray-600 fixed md:ml-[4%] md:bottom-40 md:mt-[1%] mt-[130%]  md:p-[1%]  ml-[4%] p-[2%] rounded-2xl focus:outline-none">
-        <svg xmlns="http://www.w3.org/2000/svg" class="md:h-6 md:w-6 h-6 w-6" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-  
-    </main>
+    <div class="flex-grow basis-4/6 text-center">
+      <h1 class="text-white text-left text-2xl italic md:text-7xl">
+        Restaurante Aloha
+      </h1>
+    </div>
+  </header>
 
-    <footer class="w-full bg-black text-center text-white py-8 mt-auto">
-        <div
-          class="flex flex-col md:flex-row justify-between items-center px-4 md:px-20"
-        >
-          <!-- Redes Sociales -->
-          <div class="flex space-x-6 mb-4 md:my-[2%]">
-            <a href="https://www.instagram.com/rest_aloha" target="_blank">
-              <i
-                class="fab fa-instagram text-2xl md:text-3xl text-white hover:text-white"
-              ></i>
-            </a>
-            <a href="https://www.facebook.com/rest_aloha" target="_blank">
-              <i
-                class="fab fa-facebook text-2xl md:text-3xl text-white hover:text-white"
-              ></i>
-            </a>
-          </div>
-  
-          <div
-            class="flex-grow flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6"
-          >
-            <a
-              href="tel:+34639432274"
-              class="text-base md:text-lg text-white hover:text-white"
-            >
-              <i class="fas fa-phone-alt mr-2"></i> 639432274
-            </a>
-            <a
-              href="mailto:cordongallardo@hotmail.es"
-              class="text-base md:text-lg text-white hover:text-white"
-            >
-              <i class="fas fa-envelope mr-2"></i> cordongallardo@hotmail.es
-            </a>
-            <a
-              href="https://www.bing.com/maps?q=restaurante+aloha+castillo+de+locubin&FORM=HDRSC6&cp=37.527113%7E-3.953244&lvl=17.9"
-              target="_blank"
-              class="text-base md:text-lg text-whitehover:text-white"
-            >
-              <i class="fas fa-map-marker-alt mr-2"></i> Castillo de Locubín, Jaén
-            </a>
+  <main>
+    <button id="menu-btn"
+      class="bg-gray-800 hover:bg-gray-600 fixed md:ml-[4%] md:bottom-40 md:mt-[1%] mt-[130%] md:p-[1%] ml-[4%] p-[2%] rounded-2xl focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="md:h-6 md:w-6 h-6 w-6" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+    <div class="flex flex-col items-center mt-[15%] md:mt-[5%] mb-[5%]">
+      <p class="font-serif italic absolute text-3xl ml-[3%] md:ml-[0.1%] md:text-5xl lg:text-4xl text-yellow-500">
+        Nuestra
+      </p>
+      <p class="font-serif text-3xl mt-[5%] md:mt-[1.4%] md:text-4xl lg:text-6xl text-red-400">
+        Bodega
+      </p>
+    </div>
+
+    <div class="text-center text-white text-2xl underline mb-[5%] font-bold md:text-3xl md:mb-[2%]">
+      <p>Ribera del Duero</p>
+    </div>
+    <div class="text-center mx-[5%] mb-[5%] md:text-2xl md:mb-[2%]">
+      <ul>
+        <li>Emilio Moro(Crianza con uva de variedad Tinta Fina)</li>
+        <li>Finca Resalso Botella Magnum (Crianza con uva de variedad Tinta Fina)</li>
+        <li>Protos Crianza (uva tinta fina)</li>
+      </ul>
+    </div>
+    <div class="text-center text-white text-2xl underline mb-[5%] font-bold md:text-3xl md:mb-[2%]">
+      <p>Rioja</p>
+    </div>
+
+    <div class="text-center mx-[5%] mb-[5%] md:text-2xl md:mb-[2%]">
+      <ul>
+        <li>Ramón Bilbao Crianza (Notas de uva negra madura)</li>
+        <li>Marqués de Cáceres (Barricas de Roble Francés)</li>
+        <li>Laburdet (Tempranillo)</li>
+      </ul>
+    </div>
+
+    <div class="text-center text-white text-2xl underline mb-[5%] font-bold md:text-3xl md:mb-[2%]">
+      <p>Rueda Verdejo</p>
+    </div>
+    <div>
+      <ul class="text-center mx-[5%] mb-[5%] md:text-2xl md:mb-[2%]">
+        <li>Cuatro Rayas Verdejo (Blanco Arómatica)</li>
+      </ul>
+    </div>
+    <div class="text-center text-white text-2xl underline mb-[5%] font-bold md:text-3xl md:mb-[2%]">
+      <p>Albariño</p>
+    </div>
+    <div class="text-center mx-[5%] mb-[5%] md:text-2xl md:mb-[2%]">
+      <ul>Mar de Fradés (Rías Baixas, Aromas Frutas Tropicales)</ul>
+    </div>
+    <div class="text-center text-white text-2xl underline mb-[5%] font-bold md:text-3xl md:mb-[2%] ">
+      <p>Frizante</p>
+    </div>
+    <div>
+      <ul class="text-center mx-[5%] mb-[5%] md:text-2xl md:mb-[2%]">
+        <li>Yllera (Sin denominación de origen)</li>
+      </ul>
+    </div>
+    <div class="text-center text-white text-2xl underline mb-[5%] font-bold md:text-2xl">
+      <p>Manzanilla "La Guita"</p>
+    </div>
+
+
+
+    <div class="relative overflow-hidden w-10/12 max-w-xl md:mb-[5%] mb-[10%] mx-auto">
+      <!-- Carousel Inner -->
+      <div id="carousel2" class="carousel-inner flex">
+        <div class="carousel-item min-w-full relative">
+          <img src="../img/moro.webp" alt="Imagen 3" class="w-full" />
+          <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
+            Emilio Moro
           </div>
         </div>
-      </footer>
+        <div class="carousel-item min-w-full relative">
+          <img src="../img/resalso.webp" alt="Imagen 2" class="w-full" />
+          <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
+            Finca Resalso Botella Magnum
+          </div>
+        </div>
+        <div class="carousel-item min-w-full relative">
+          <img src="../img/protos.jpg" alt="Imagen 3" class="w-full" />
+          <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
+            Protos Crianza
+          </div>
+        </div>
+        <div class="carousel-item min-w-full relative">
+          <img src="../img/bilbao.webp" alt="Imagen 3" class="w-full" />
+          <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
+            Ramón Bilbao Crianza
+          </div>
+        </div>
+        <div class="carousel-item min-w-full relative">
+          <img src="../img/marques.jpg" alt="Imagen 3" class="w-full" />
+          <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
+            Marqués de Cáceres
+          </div>
+        </div>
+        <div class="carousel-item min-w-full relative">
+          <img src="../img/4rayas.jpg" alt="Imagen 1" class="w-full" />
+          <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
+            Cuatro Rayas Verdejo
+          </div>
+        </div>
+        <div class="carousel-item min-w-full relative">
+          <img src="../img/mar_frades.webp" alt="Imagen 1" class="w-full" />
+          <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
+            Mar de Fradés
+          </div>
+        </div>
+        <div class="carousel-item min-w-full relative">
+          <img src="../img/yllera.jpg" alt="Imagen 1" class="w-full" />
+          <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
+            Yllera
+          </div>
+        </div>
+      </div>
+      <!-- Carousel Controls -->
+      <button onclick="showSlide(-1, 'carousel2')"
+        class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 focus:outline-none">
+        &#8249;
+      </button>
+      <button onclick="showSlide(1,'carousel2')"
+        class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 focus:outline-none">
+        &#8250;
+      </button>
+      <!-- Carousel Indicators -->
+      <div class="flex justify-center mt-4">
+        <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
+          onclick="currentSlide(0)"></div>
+        <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
+          onclick="currentSlide(1)"></div>
+        <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
+          onclick="currentSlide(2)"></div>
+        <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
+          onclick="currentSlide(3)"></div>
+        <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
+          onclick="currentSlide(4)"></div>
+        <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
+          onclick="currentSlide(5)"></div>
+        <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
+          onclick="currentSlide(6)"></div>
+        <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
+          onclick="currentSlide(7)"></div>
+      </div>
+    </div>
+  </main>
 
-    <script>
-        // Seleccionamos el elemento <a> por su ID
-        const link = document.getElementById('animated-link');
+  <footer class="w-full bg-black text-center text-white py-8 mt-auto">
+    <div class="flex flex-col md:flex-row justify-between items-center px-4 md:px-20">
+      <!-- Redes Sociales -->
+      <div class="flex space-x-6 mb-4 md:my-[2%]">
+        <a href="https://www.instagram.com/rest_aloha" target="_blank">
+          <i class="fab fa-instagram text-2xl md:text-3xl text-white hover:text-white"></i>
+        </a>
+        <a href="https://www.facebook.com/people/Restaurante-Aloha/100064768928297/" target="_blank">
+          <i class="fab fa-facebook text-2xl md:text-3xl text-white hover:text-white"></i>
+        </a>
+      </div>
 
-        // Añadimos un evento que se activa cuando el ratón pasa por encima (hover)
-        link.addEventListener('mouseenter', () => {
-            // Aplicamos la animación de deslizar hacia la derecha
-            link.style.transform = 'translateX(10px)';
-        });
-
-        // Añadimos un evento que se activa cuando el ratón sale del área del enlace
-        link.addEventListener('mouseleave', () => {
-            // Restauramos la posición original
-            link.style.transform = 'translateX(0)';
-        });
-    </script>
-
+      <div class="flex-grow flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+        <a href="tel:+34639432274" class="text-base md:text-lg text-white hover:text-white">
+          <i class="fas fa-phone-alt mr-2"></i> 639432274
+        </a>
+        <a href="mailto:cordongallardo@hotmail.es" class="text-base md:text-lg text-white hover:text-white">
+          <i class="fas fa-envelope mr-2"></i> cordongallardo@hotmail.es
+        </a>
+        <a href="https://www.bing.com/maps?q=restaurante+aloha+castillo+de+locubin&FORM=HDRSC6&cp=37.527113%7E-3.953244&lvl=17.9"
+          target="_blank" class="text-base md:text-lg text-whitehover:text-white">
+          <i class="fas fa-map-marker-alt mr-2"></i> Castillo de Locubín, Jaén
+        </a>
+      </div>
+    </div>
+  </footer>
 </body>
+
+<script>
+  let currentIndex = 0;
+  const items = document.querySelectorAll(".carousel-item");
+  const indicators = document.querySelectorAll(".indicator");
+
+  function showSlide(direction, carouselId) {
+    const carousel = document.getElementById(carouselId);
+    const items = carousel.querySelectorAll(".carousel-item");
+    const totalItems = items.length;
+
+    // Obtener índice actual del atributo data-index o inicializarlo en 0
+    let currentIndex = parseInt(carousel.getAttribute("data-index")) || 0;
+
+    // Calcular nuevo índice dependiendo de la dirección
+    currentIndex = (currentIndex + direction + totalItems) % totalItems;
+
+    // Mover carrusel
+    const offset = -currentIndex * 100;
+    carousel.style.transform = `translateX(${offset}%)`;
+
+    // Guardar índice actual
+    carousel.setAttribute("data-index", currentIndex);
+
+    // Actualizar indicadores
+    updateIndicators(carouselId, currentIndex);
+  }
+
+  function updateIndicators(carouselId, currentIndex) {
+    const carousel = document.getElementById(carouselId);
+    const indicators = carousel.parentNode.querySelectorAll(".indicator");
+
+    indicators.forEach((indicator, index) => {
+      if (index === currentIndex) {
+        indicator.classList.add("bg-gray-700");
+        indicator.classList.remove("bg-gray-400");
+      } else {
+        indicator.classList.remove("bg-gray-700");
+        indicator.classList.add("bg-gray-400");
+      }
+    });
+  }
+
+  // Inicialización automática (opcional)
+  function initCarousel(carouselId, interval = 5000) {
+    setInterval(() => {
+      const currentIndex = parseInt(document.getElementById(carouselId).getAttribute("data-index")) || 0;
+      showSlide(1, carouselId);
+    }, interval);
+  }
+
+  // Inicializar carruseles
+  initCarousel("carousel1", 30000);
+
+  function transitionAndRedirect(url) {
+    const expandDiv = document.createElement("div");
+    expandDiv.className = "expand-animation";
+    expandDiv.style.position = "fixed";
+    expandDiv.style.top = "0";
+    expandDiv.style.left = "0";
+    expandDiv.style.width = "0";
+    expandDiv.style.height = "100vh";
+    expandDiv.style.backgroundImage = "url('../img/fondo_nav.jpeg')";
+    expandDiv.style.backgroundSize = "cover";
+    expandDiv.style.backgroundPosition = "center";
+    document.body.appendChild(expandDiv);
+
+    setTimeout(() => {
+      window.location.href = url;
+    }, 600);
+  }
+
+  document.getElementById("menu-btn").addEventListener("click", (event) => {
+    event.preventDefault();
+    transitionAndRedirect("./navegador.html");
+  });
+  function transitionAndRedirect(url) {
+    const expandDiv = document.createElement("div");
+    expandDiv.className = "expand-animation";
+    expandDiv.style.position = "fixed";
+    expandDiv.style.top = "0";
+    expandDiv.style.left = "0";
+    expandDiv.style.width = "0";
+    expandDiv.style.height = "100vh";
+    expandDiv.style.backgroundImage = "url('../img/fondo_nav.jpeg')";
+    expandDiv.style.backgroundSize = "cover";
+    expandDiv.style.backgroundPosition = "center";
+    document.body.appendChild(expandDiv);
+
+    setTimeout(() => {
+      window.location.href = url;
+    }, 600);
+  }
+
+  document.getElementById("menu-btn").addEventListener("click", (event) => {
+    event.preventDefault();
+    transitionAndRedirect("./navegador.html");
+  });
+</script>
+
 </html>

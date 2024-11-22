@@ -17,71 +17,69 @@
         <style>
             /* Animación expandiéndose de izquierda a derecha */
             @keyframes expandAndCover {
-              0% {
-                width: 0;
-                height: 100vh;
-                left: 0;
-                top: 0;
-                opacity: 0.3;
-              }
-        
-              80% {
-                width: 100vw;
-                height: 100vh;
-                left: 0;
-                top: 0;
-                opacity: 0.8;
-              }
-        
-              100% {
-                width: 100vw;
-                height: 100vh;
-                left: 0;
-                top: 0;
-                opacity: 1;
-              }
+                0% {
+                    width: 0;
+                    height: 100vh;
+                    left: 0;
+                    top: 0;
+                    opacity: 0.3;
+                }
+
+                80% {
+                    width: 100vw;
+                    height: 100vh;
+                    left: 0;
+                    top: 0;
+                    opacity: 0.8;
+                }
+
+                100% {
+                    width: 100vw;
+                    height: 100vh;
+                    left: 0;
+                    top: 0;
+                    opacity: 1;
+                }
             }
-        
+
             /* Clase para activar la animación */
             .expand-animation {
-              animation: expandAndCover 0.6s forwards ease-out;
-              position: fixed;
-              z-index: 50;
-              background-size: cover;
-              background-position: center;
+                animation: expandAndCover 0.6s forwards ease-out;
+                position: fixed;
+                z-index: 50;
+                background-size: cover;
+                background-position: center;
             }
-          </style>
+        </style>
     </head>
 
-    <body class=" font-serif bg-cover bg-center min-h-screen flex flex-col justify-between"
-        style="background-image: url('../img/fondo_3.webp');">
-
-        <header class="relative z-10 bg-black py-4 px-6 flex items-center">
-            <div class="relative pl-[2%] pb-[1%] w-[15%]">
+    <body class="bg-cover bg-center min-h-screen flex flex-col justify-between font-serif"
+        style="background-image: url('../img/fondo_3.webp')">
+        <header class="relative z-10 bg-black py-4 px-6 flex flex-col-2 items-center">
+            <div class="relative pl-[2%] pb-[1%] basis-2/6">
                 <a href="./main.html">
-                    <img src="../img/logo.png" alt="Logo del restaurante" />
+                    <img class="w-[20%] md:w-[45%]" src="../img/logo.png" alt="Logo del restaurante" />
                 </a>
             </div>
 
-            <div class="flex-grow pl-[23%]">
-                <h1 class="text-white sm:text-4xl md:text-5xl lg:text-6xl italic">
+            <div class="flex-grow basis-4/6 text-center">
+                <h1 class="text-white text-left text-2xl italic md:text-7xl">
                     Restaurante Aloha
                 </h1>
             </div>
         </header>
         <main>
-              <!-- Botón de hamburguesa -->
-    <button id="menu-btn"
-    class="bg-gray-800 hover:bg-gray-600 fixed md:ml-[4%] md:bottom-40 md:mt-[1%] mt-[130%]  md:p-[1%]  ml-[4%] p-[2%] rounded-2xl focus:outline-none">
-    <svg xmlns="http://www.w3.org/2000/svg" class="md:h-6 md:w-6 h-6 w-6" fill="none" viewBox="0 0 24 24"
-      stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-    </svg>
-  </button>
+            <!-- Botón de hamburguesa -->
+            <button id="menu-btn"
+                class="bg-gray-800 hover:bg-gray-600 fixed md:ml-[4%] md:bottom-40 md:mt-[1%] mt-[130%]  md:p-[1%]  ml-[4%] p-[2%] rounded-2xl focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="md:h-6 md:w-6 h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
             <div>
                 <div class="flex flex-col items-center mt-[15%] md:mt-[5%]">
-                    <p
-                        class="font-serif italic absolute text-3xl ml-[3%] md:ml-[0.1%] md:text-5xl  text-yellow-500">
+                    <p class="font-serif italic absolute text-3xl ml-[3%] md:ml-[0.1%] md:text-5xl  text-yellow-500">
                         Catering
                     </p>
                     <p class="font-serif text-3xl mt-[5%]  md:mt-[2%] md:text-4xl lg:text-6xl text-white">
@@ -91,13 +89,15 @@
                     <div class="mt-[8%] md:mt-[1%] text-center mx-[6%]">
                         <ul class="text-white text-lg md:text-2xl">
                             <li class="my-[6%]">
-                                <p class=" text-2xl md:text-4xl text-white underline font-semibold md:mb-[2%]">Asesoramiento integral</p>
+                                <p class=" text-2xl md:text-4xl text-white underline font-semibold md:mb-[2%]">
+                                    Asesoramiento integral</p>
                                 <p> para crear una experiencia única, donde cada
                                     detalle culinario y logístico se alinea con el éxito de su evento.
                                 </p>
                             </li>
                             <li class="my-[6%]">
-                                <p class=" text-2xl md:text-4xl underline text-white font-semibold md:mb-[2%]">Experiencia</p>
+                                <p class=" text-2xl md:text-4xl underline text-white font-semibold md:mb-[2%]">
+                                    Experiencia</p>
                                 <p> contamos con amplia experiencia en el sector, desarrollando
                                     habilidades en atención al cliente, gestión operativa y calidad de servicio.</p>
                             </li>
@@ -112,7 +112,34 @@
                     </div>
                 </div>
 
+                <!-- CARRUSEL DE IMAGENES -->
+                <div class="relative overflow-hidden w-10/12 max-w-xl md:mb-[5%] mb-[10%] mx-auto">
+                    <div id="carousel" class="flex transition-transform duration-800 ease-out opacity-100">
+                        <img src="../img/catering1.JPEG" alt="Imagen 1"
+                            class="w-full object-cover transform scale-100 transition-transform duration-800" />
+                        <img src="../img/catering2.JPEG" alt="Imagen 2"
+                            class="w-full object-cover transform scale-100 transition-transform duration-800" />
+                        <img src="../img/catering4.JPEG" alt="Imagen 4"
+                            class="w-full object-cover transform scale-100 transition-transform duration-800" />
+                        <img src="../img/catering5.JPEG" alt="Imagen 5"
+                            class="w-full object-cover transform scale-100 transition-transform duration-800" />
+                        <img src="../img/catering3.jpeg" alt="Imagen 3"
+                            class="w-full object-cover transform scale-100 transition-transform duration-800" />
+                        <img src="../img/tabla_quesos.JPEG" alt="Imagen 3"
+                            class="w-full object-cover transform scale-100 transition-transform duration-800" />
+                    </div>
 
+                    <button id="prev"
+                        class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-gradient-to-br from-blue-500 to-purple-500 text-white p-4 rounded-full shadow-lg hover:from-purple-500 hover:to-blue-500 transition-all duration-300 focus:outline-none border-2 border-white">
+                        &#8592;
+                    </button>
+
+                    <button id="next"
+                        class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-gradient-to-br from-blue-500 to-purple-500 text-white p-4 rounded-full shadow-lg hover:from-purple-500 hover:to-blue-500 transition-all duration-300 focus:outline-none border-2 border-white">
+                        &#8594;
+                    </button>
+
+                </div>
         </main>
         <footer class="w-full bg-black text-center text-white py-8 mt-auto">
             <div class="flex flex-col md:flex-row justify-between items-center px-4 md:px-20">
@@ -121,7 +148,7 @@
                     <a href="https://www.instagram.com/rest_aloha" target="_blank">
                         <i class="fab fa-instagram text-2xl md:text-3xl text-white hover:text-white"></i>
                     </a>
-                    <a href="https://www.facebook.com/rest_aloha" target="_blank">
+                    <a href="https://www.facebook.com/people/Restaurante-Aloha/100064768928297/" target="_blank">
                         <i class="fab fa-facebook text-2xl md:text-3xl text-white hover:text-white"></i>
                     </a>
                 </div>
@@ -140,31 +167,102 @@
                 </div>
             </div>
         </footer>
-        
-  <script>
-    function transitionAndRedirect(url) {
-      const expandDiv = document.createElement('div');
-      expandDiv.className = 'expand-animation';
-      expandDiv.style.position = 'fixed';
-      expandDiv.style.top = '0';
-      expandDiv.style.left = '0';
-      expandDiv.style.width = '0';
-      expandDiv.style.height = '100vh';
-      expandDiv.style.backgroundImage = "url('../img/fondo_nav.jpeg')";
-      expandDiv.style.backgroundSize = 'cover';
-      expandDiv.style.backgroundPosition = 'center';
-      document.body.appendChild(expandDiv);
 
-      setTimeout(() => {
-        window.location.href = url;
-      }, 600);
-    }
+        <script>
 
-    document.getElementById('menu-btn').addEventListener('click', (event) => {
-      event.preventDefault();
-      transitionAndRedirect('./navegador.html');
-    });
-  </script>
+            const carousel = document.getElementById("carousel");
+            const images = carousel.children;
+            const totalImages = images.length;
+            let index = 0;
+
+            // Botones
+            const prevButton = document.getElementById("prev");
+            const nextButton = document.getElementById("next");
+
+            // Avanzar al siguiente slide
+            nextButton.addEventListener("click", () => {
+                if (index < totalImages - 1) {
+                    index++;
+                } else {
+                    index = 0; // Volver al principio si llegamos al final
+                }
+                updateCarousel();
+            });
+
+            // Volver al slide anterior
+            prevButton.addEventListener("click", () => {
+                if (index > 0) {
+                    index--;
+                } else {
+                    index = totalImages - 1; // Ir al último slide si estamos en el primero
+                }
+                updateCarousel();
+            });
+
+            // Función para actualizar el carrusel con fade y zoom
+            function updateCarousel() {
+                // Aplicamos fade-out y zoom-out a la imagen actual antes de cambiar
+                for (let i = 0; i < totalImages; i++) {
+                    images[i].classList.remove("opacity-100", "scale-110");
+                    images[i].classList.add("opacity-0", "scale-100");
+                }
+
+                // Desplazamos el contenedor del carrusel
+                const offset = -index * 100; // Desplazar según el índice
+                carousel.style.transform = `translateX(${offset}%)`;
+
+                // Esperar 400ms para terminar el fade-out antes de aplicar fade-in y zoom-in
+                setTimeout(() => {
+                    images[index].classList.remove("opacity-0", "scale-100");
+                    images[index].classList.add("opacity-100", "scale-110");
+                }, 200); // La mitad de la duración de la transición
+            }
+
+            function transitionAndRedirect(url) {
+                const expandDiv = document.createElement('div');
+                expandDiv.className = 'expand-animation';
+                expandDiv.style.position = 'fixed';
+                expandDiv.style.top = '0';
+                expandDiv.style.left = '0';
+                expandDiv.style.width = '0';
+                expandDiv.style.height = '100vh';
+                expandDiv.style.backgroundImage = "url('../img/fondo_nav.jpeg')";
+                expandDiv.style.backgroundSize = 'cover';
+                expandDiv.style.backgroundPosition = 'center';
+                document.body.appendChild(expandDiv);
+
+                setTimeout(() => {
+                    window.location.href = url;
+                }, 600);
+            }
+
+            document.getElementById('menu-btn').addEventListener('click', (event) => {
+                event.preventDefault();
+                transitionAndRedirect('./navegador.html');
+            });
+            function transitionAndRedirect(url) {
+                const expandDiv = document.createElement('div');
+                expandDiv.className = 'expand-animation';
+                expandDiv.style.position = 'fixed';
+                expandDiv.style.top = '0';
+                expandDiv.style.left = '0';
+                expandDiv.style.width = '0';
+                expandDiv.style.height = '100vh';
+                expandDiv.style.backgroundImage = "url('../img/fondo_nav.jpeg')";
+                expandDiv.style.backgroundSize = 'cover';
+                expandDiv.style.backgroundPosition = 'center';
+                document.body.appendChild(expandDiv);
+
+                setTimeout(() => {
+                    window.location.href = url;
+                }, 600);
+            }
+
+            document.getElementById('menu-btn').addEventListener('click', (event) => {
+                event.preventDefault();
+                transitionAndRedirect('./navegador.html');
+            });
+        </script>
     </body>
 
     </html>

@@ -22,3 +22,8 @@
 	-móvil (done espera de nuevas fotos)
 	-portatil (done espera de nuevas fotos)
 
+
+
+Tiempo real siempre ira antes si esta preparado 
+cfs planifica grupos de procesos, RR 
+target latency solo afecta a cfs
