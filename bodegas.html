@@ -13,6 +13,13 @@
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
+    .carousel-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: contain;
+      background-color: black;
+    }
+
     .carousel-inner {
       transition: transform 0.5s ease;
     }
@@ -23,12 +30,12 @@
   </style>
 </head>
 
-<body class="font-serif bg-cover bg-center min-h-screen h-full w-full"
-  style="background-image: url('../img/fondo_4.webp')">
+<body class="font-serif bg-cover bg-center min-h-screen h-full w-full text-white"
+  style="background-image: url('img/fondo_4.webp')">
   <header class="relative z-10 bg-black py-4 px-6 flex flex-col-2 items-center">
     <div class="relative pl-[2%] pb-[1%] basis-2/6">
       <a href="./main.html">
-        <img class="w-[90%] md:w-[45%]" src="../img/logo.png" alt="Logo del restaurante" />
+        <img class="w-[90%] md:w-[45%]" src="img/logo.png" alt="Logo del restaurante" />
       </a>
     </div>
 
@@ -41,7 +48,7 @@
 
   <main>
     <button id="menu-btn"
-      class="bg-gray-800 hover:bg-gray-600 fixed md:ml-[4%] md:bottom-40 md:mt-[1%] mt-[130%] md:p-[1%] ml-[4%] p-[2%] rounded-2xl focus:outline-none">
+      class="bg-gray-800 hover:bg-gray-600 fixed bottom-[20%]  md:ml-[4%] md:bottom-[20%] md:mt-[1%] mt-[130%] md:p-[1%] ml-[4%] p-[2%] rounded-2xl focus:outline-none">
       <svg xmlns="http://www.w3.org/2000/svg" class="md:h-6 md:w-6 h-6 w-6" fill="none" viewBox="0 0 24 24"
         stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -49,148 +56,124 @@
     </button>
     <div class="flex flex-col items-center mt-[15%] md:mt-[5%] mb-[5%]">
       <p class="font-serif italic absolute text-3xl ml-[3%] md:ml-[0.1%] md:text-5xl lg:text-4xl text-yellow-500">
-        Nuestras
+        Nuestra
       </p>
       <p class="font-serif text-3xl mt-[5%] md:mt-[1.4%] md:text-4xl lg:text-6xl text-red-400">
-        Especialidades
+        Bodega
       </p>
     </div>
 
-    <div class="flex flex-col items-center my-[5%]">
-      <p class="font-serif italic text-white text-2xl font-bold">
-        Bajo Reserva
-      </p>
+    <div class="text-center text-white text-2xl underline mb-[5%] font-bold md:text-3xl md:mb-[2%]">
+      <p>Ribera del Duero</p>
+    </div>
+    <div class="text-center mx-[5%] mb-[5%] md:text-2xl md:mb-[2%]">
+      <ul>
+        <li>Emilio Moro(Crianza con uva de variedad Tinta Fina)</li>
+        <li>Finca Resalso Botella Magnum (Crianza con uva de variedad Tinta Fina)</li>
+        <li>Protos Crianza (uva tinta fina)</li>
+      </ul>
+    </div>
+    <div class="text-center text-white text-2xl underline mb-[5%] font-bold md:text-3xl md:mb-[2%]">
+      <p>Rioja</p>
     </div>
 
-    <div class="relative overflow-hidden w-10/12 max-w-xl md:mb-[5%] mb-[10%] mx-auto">
-      <!-- Carousel Inner -->
-      <div id="carousel1" class="carousel-inner flex">
-        <div class="carousel-item min-w-full relative">
-          <img src="../img/caldereta.jpg" alt="Imagen 1" class="w-full" />
-          <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
-            Caldereta de bogavante
-          </div>
-        </div>
-        <div class="carousel-item min-w-full relative">
-          <img src="../img/corvina_horno.JPEG" alt="Imagen 2" class="w-full" />
-          <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
-            Corvina al horno
-          </div>
-        </div>
-
-        <div class="carousel-item min-w-full relative">
-          <img src="../img/Tomahawk.JPEG" alt="Imagen 3" class="w-full" />
-          <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
-            Tomahawk de ternera
-          </div>
-        </div>
-        <div class="carousel-item min-w-full relative">
-          <img src="../img/T-bone.JPEG" alt="Imagen 3" class="w-full" />
-          <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
-            T-Bone de ternera
-          </div>
-        </div>
-
-      </div>
-      <!-- Carousel Controls -->
-      <button onclick="showSlide(-1, 'carousel1')"
-        class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gradient-to-br from-blue-500 to-purple-500 text-white p-4 rounded-full shadow-lg hover:from-purple-500 hover:to-blue-500 transition-all duration-300 focus:outline-none">
-        &#8249;
-      </button>
-      <button onclick="showSlide(1,'carousel1')"
-        class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gradient-to-br from-blue-500 to-purple-500 text-white p-4 rounded-full shadow-lg hover:from-purple-500 hover:to-blue-500 transition-all duration-300 focus:outline-none">
-        &#8250;
-      </button>
-
-      <!-- Carousel Indicators -->
-      <div class="flex justify-center mt-4">
-        <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
-          onclick="currentSlide(0)"></div>
-        <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
-          onclick="currentSlide(1)"></div>
-        <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
-          onclick="currentSlide(2)"></div>
-        <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
-          onclick="currentSlide(3)"></div>
-
-      </div>
+    <div class="text-center mx-[5%] mb-[5%] md:text-2xl md:mb-[2%]">
+      <ul>
+        <li>Ramón Bilbao Crianza (Notas de uva negra madura)</li>
+        <li>Marqués de Cáceres (Barricas de Roble Francés)</li>
+        <li>Laburdet (Tempranillo)</li>
+      </ul>
     </div>
 
-    <div class="flex flex-col items-center my-[5%]">
-      <p class="font-serif italic text-white text-2xl font-bold">
-        Especialidades
-      </p>
+    <div class="text-center text-white text-2xl underline mb-[5%] font-bold md:text-3xl md:mb-[2%]">
+      <p>Rueda Verdejo</p>
     </div>
+    <div>
+      <ul class="text-center mx-[5%] mb-[5%] md:text-2xl md:mb-[2%]">
+        <li>Cuatro Rayas Verdejo (Blanco Arómatica)</li>
+      </ul>
+    </div>
+    <div class="text-center text-white text-2xl underline mb-[5%] font-bold md:text-3xl md:mb-[2%]">
+      <p>Albariño</p>
+    </div>
+    <div class="text-center mx-[5%] mb-[5%] md:text-2xl md:mb-[2%]">
+      <ul>Mar de Fradés (Rías Baixas, Aromas Frutas Tropicales)</ul>
+    </div>
+    <div class="text-center text-white text-2xl underline mb-[5%] font-bold md:text-3xl md:mb-[2%] ">
+      <p>Frizante</p>
+    </div>
+    <div>
+      <ul class="text-center mx-[5%] mb-[5%] md:text-2xl md:mb-[2%]">
+        <li>Yllera (Sin denominación de origen)</li>
+      </ul>
+    </div>
+    <div class="text-center text-white text-2xl underline mb-[5%] font-bold md:text-2xl">
+      <p>Manzanilla "La Guita"</p>
+    </div>
+
+
 
     <div class="relative overflow-hidden w-10/12 max-w-xl md:mb-[5%] mb-[10%] mx-auto">
       <!-- Carousel Inner -->
       <div id="carousel2" class="carousel-inner flex">
         <div class="carousel-item min-w-full relative">
-          <img src="../img/barco_marisco.JPEG" alt="Imagen 3" class="w-full" />
+          <img src="img/moro.webp" alt="Imagen 3" class="w-full" />
           <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
-            Barcos de Marisco
-          </div>
-        </div>
-
-        <div class="carousel-item min-w-full relative">
-          <img src="../img/angus.JPEG" alt="Imagen 2" class="w-full" />
-          <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
-            Solomillo de ternera Raza Angus
+            Emilio Moro
           </div>
         </div>
         <div class="carousel-item min-w-full relative">
-          <img src="../img/Tartar.JPEG" alt="Imagen 3" class="w-full" />
+          <img src="img/resalso.webp" alt="Imagen 2" class="w-full" />
           <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
-            Tartar de Atún Rojo de Almadraba
+            Finca Resalso Botella Magnum
           </div>
         </div>
         <div class="carousel-item min-w-full relative">
-          <img src="../img/atun rojo.JPEG" alt="Imagen 3" class="w-full" />
+          <img src="img/protos.jpg" alt="Imagen 3" class="w-full" />
           <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
-            Atun Rojo de Almadraba
+            Protos Crianza
           </div>
         </div>
         <div class="carousel-item min-w-full relative">
-          <img src="../img/calamar nacional.JPEG" alt="Imagen 3" class="w-full" />
+          <img src="img/bilbao.webp" alt="Imagen 3" class="w-full" />
           <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
-            Calamar Nacional
+            Ramón Bilbao Crianza
           </div>
         </div>
         <div class="carousel-item min-w-full relative">
-          <img src="../img/almejas.JPEG" alt="Imagen 1" class="w-full" />
+          <img src="img/marques.jpg" alt="Imagen 3" class="w-full" />
           <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
-            Almejas de carril
+            Marqués de Cáceres
           </div>
         </div>
         <div class="carousel-item min-w-full relative">
-          <img src="../img/ostras1.JPEG" alt="Imagen 1" class="w-full" />
+          <img src="img/4rayas.jpg" alt="Imagen 1" class="w-full" />
           <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
-            Ostras
+            Cuatro Rayas Verdejo
           </div>
         </div>
         <div class="carousel-item min-w-full relative">
-          <img src="../img/setas.JPEG" alt="Imagen 1" class="w-full" />
+          <img src="img/mar_frades.webp" alt="Imagen 1" class="w-full" />
           <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
-            Setas de Cordo "Comarca Sierra Sur" (Temporada)
+            Mar de Fradés
           </div>
         </div>
         <div class="carousel-item min-w-full relative">
-          <img src="../img/setas_si.JPEG" alt="Imagen 1" class="w-full" />
+          <img src="img/yllera.jpg" alt="Imagen 1" class="w-full" />
           <div class="text-center text-white text-2xl bg-black bg-opacity-50 p-2 rounded">
-            Setas de Cordo "Comarca Sierra Sur" (Temporada)
+            Yllera
           </div>
         </div>
       </div>
       <!-- Carousel Controls -->
       <button onclick="showSlide(-1, 'carousel2')"
-        class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gradient-to-br from-blue-500 to-purple-500 text-white p-4 rounded-full shadow-lg hover:from-purple-500 hover:to-blue-500 transition-all duration-300 focus:outline-none">
+        class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 focus:outline-none">
         &#8249;
       </button>
       <button onclick="showSlide(1,'carousel2')"
-        class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gradient-to-br from-blue-500 to-purple-500 text-white p-4 rounded-full shadow-lg hover:from-purple-500 hover:to-blue-500 transition-all duration-300 focus:outline-none">
+        class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 focus:outline-none">
         &#8250;
-      </button> 
-
+      </button>
       <!-- Carousel Indicators -->
       <div class="flex justify-center mt-4">
         <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
@@ -209,9 +192,6 @@
           onclick="currentSlide(6)"></div>
         <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
           onclick="currentSlide(7)"></div>
-        <div class="indicator w-4 h-4 bg-gray-400 rounded-full mx-2 cursor-pointer transition-colors duration-300"
-          onclick="currentSlide(8)"></div>
-
       </div>
     </div>
   </main>
@@ -295,8 +275,7 @@
   }
 
   // Inicializar carruseles
-  initCarousel("carousel1", 14000);
-  initCarousel("carousel2", 14000);
+  initCarousel("carousel1", 30000);
 
   function transitionAndRedirect(url) {
     const expandDiv = document.createElement("div");
@@ -306,7 +285,7 @@
     expandDiv.style.left = "0";
     expandDiv.style.width = "0";
     expandDiv.style.height = "100vh";
-    expandDiv.style.backgroundImage = "url('../img/fondo_nav.jpeg')";
+    expandDiv.style.backgroundImage = "url('img/fondo_nav.jpeg')";
     expandDiv.style.backgroundSize = "cover";
     expandDiv.style.backgroundPosition = "center";
     document.body.appendChild(expandDiv);
@@ -328,7 +307,7 @@
     expandDiv.style.left = "0";
     expandDiv.style.width = "0";
     expandDiv.style.height = "100vh";
-    expandDiv.style.backgroundImage = "url('../img/fondo_nav.jpeg')";
+    expandDiv.style.backgroundImage = "url('img/fondo_nav.jpeg')";
     expandDiv.style.backgroundSize = "cover";
     expandDiv.style.backgroundPosition = "center";
     document.body.appendChild(expandDiv);

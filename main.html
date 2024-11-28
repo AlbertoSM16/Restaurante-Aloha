@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Horario de Apertura</title>
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="output.css">
+  <meta name="description" content="Restaurante Aloha en Castillo de Locubín, Jaén. Disfruta de nuestra comida española de calidad en un ambiente acogedor.">
+  <meta name="keywords" content="Restaurante Aloha, comida española, Castillo de Locubín, restaurante en Jaén, comida típica española, restaurantes en Jaén">
+  <meta name="author" content="Restaurante Aloha">
+  <meta property="og:title" content="Restaurante Aloha - Comida Española en Castillo de Locubín">
+  <meta property="og:description" content="Restaurante Aloha ofrece platos de comida española en Castillo de Locubín. Ven y disfruta de una experiencia gastronómica única.">
+  <meta property="og:image" content="http://restuarantealoha.com/img/logo.png">
+  <meta property="og:url" content="http://restaurantealoha.com">
 
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurante Aloha</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:ital@1&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     /* Animación expandiéndose de izquierda a derecha */
     @keyframes expandAndCover {
@@ -52,14 +58,12 @@
   </style>
 </head>
 
-<body class=" font-serif bg-cover bg-center min-h-screen flex flex-col justify-between"
-  style="background-image: url('../img/fondo_horario.webp');">
-  <div class="absolute inset-0 bg-black bg-opacity-50 z-0"></div> <!-- Overlay negro con opacidad -->
-
+<body class="bg-cover bg-center min-h-screen flex flex-col justify-between font-serif"
+  style="background-image: url('img/fondo_horario.webp')">
   <header class="relative z-10 bg-black py-4 px-6 flex flex-col-2 items-center">
     <div class="relative pl-[2%] pb-[1%] basis-2/6">
         <a href="./main.html">
-            <img class="w-[90%] md:w-[45%]" src="../img/logo.png" alt="Logo del restaurante" />
+            <img class="w-[90%] md:w-[45%]" src="img/logo.png" alt="Logo del restaurante" />
         </a>
     </div>
 
@@ -70,79 +74,50 @@
     </div>
 </header>
 
-  <main class="font-serif relative z-10 flex flex-col">
+  <main class="text-white">
     <!-- Botón de hamburguesa -->
     <button id="menu-btn"
-      class="bg-gray-800 hover:bg-gray-600 fixed md:ml-[4%] md:bottom-40 md:mt-[1%] mt-[130%]  md:p-[1%]  ml-[4%] p-[2%] rounded-2xl focus:outline-none">
+      class="bg-gray-800 hover:bg-gray-600 bottom-[20%] fixed md:ml-[4%] md:bottom-[20%] md:mt-[1%] mt-[130%]  md:p-[1%]  ml-[4%] p-[2%] rounded-2xl focus:outline-none">
       <svg xmlns="http://www.w3.org/2000/svg" class="md:h-6 md:w-6 h-6 w-6" fill="none" viewBox="0 0 24 24"
         stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
 
-    <div class="text-white mt-[7%] md:mt-[4%] ">
-      <h3 class="text-center text-xl font-serif font-semibold mb-[2%]">PUEDES ENCONTRARNOS ...</h3>
-      <div class="text-center">
-        <p class="text-lg ">📍Polígono Industrial "El Cerezo"</p>
-        <p class="text-lg mb-[4%]">Castillo de Locubín</p>
-      </div>
-    </div>
-
     <div>
-      <iframe class="ml-[8%] mb-[10%] md:mb-[4%] md:ml-[35%] md:w-[30%] md:h-500 "
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.1790582232807!2d-3.955544023528061!3d37.52727617204885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6de906df410bab%3A0xd9a14afb510c2d84!2sRestaurante%20Aloha!5e0!3m2!1ses!2ses!4v1729531874169!5m2!1ses!2ses"
-        width="330" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-
-    <div class="schedule text-center my-[1%] md:my-[0.5%] mx-auto  font-serif text-xl md:text-2xl">
-      <h2 class="text-2xl font-semibold  text-white  md:text-4xl mb-[1%]">Horario de Apertura</h2>
-
-      <div class="pt-[1%] pb-[1%] ">
-        <i class="fas fa-clock mr-[1%] text-white"></i>
-        <span class="mx-[1%] text-white">Lunes:</span>
-        <span class="mx-[1%] text-white">Cerrado</span>
+      <div class="flex flex-col items-center mt-[15%] md:mt-[5%]">
+        <p class="font-serif italic absolute text-3xl ml-[3%] md:ml-[0.1%] md:text-5xl lg:text-4xl text-yellow-500">
+          Comida
+        </p>
+        <p class="font-serif text-3xl mt-[5%]  md:mt-[1.4%] md:text-4xl lg:text-6xl text-red-400">
+          Tradicional
+        </p>
+      </div>
+      <div class="text-center px-[20%] rounded-lg mt-[10%] md:mt-[5%] pb-[3%] shadow-lg">
+        <p class="text-xl md:text-2xl">En Restaurante Aloha ofrecemos una carta y menús diarios sin necesidad de reserva previa. Dichos menús diarios se ofrecen únicamente de martes a viernes sin incluir días festivos
+          Para reuniones, posibilidad de crear un menú adaptado a los condiciones de dichos encuentros.
+        </p>
       </div>
 
-      <div class="pt-[1%] pb-[1%]">
-        <i class="fas fa-clock mr-[1%] text-white"></i>
-        <span class="mx-[1%] text-white">Martes:</span>
-        <span class="mx-[1%] text-white">12:30 - 17:00</span>
+      <div class="flex flex-col  items-center mt-[15%] md:mt-[5%]">
+        <p class="font-serif italic absolute text-3xl ml-[6%] md:ml-[0.1%] md:pb-[12%]  md:text-5xl lg:text-4xl text-yellow-500">
+          Gastronomia
+        </p>
+        <p class="font-serif text-3xl mt-[5%] md:mt-[1.4%] md:text-4xl lg:text-6xl text-red-400">
+          Nacional
+        </p>
       </div>
 
-      <div class="pt-[1%]  pb-[1%]">
-        <i class="fas fa-clock mr-[1%] text-white"></i>
-        <span class="mx-[1%] text-white">Miércoles:</span>
-        <span class="mx-[1%] text-white">12:30-17:00</span>
-      </div>
-
-      <div class="pt-[1%]  pb-[1%]">
-        <i class="fas fa-clock mr-[1%] text-white"></i>
-        <span class="mx-[1%] text-white">Jueves:</span>
-        <span class="mx-[1%] text-white">12:30-17:00</span>
-      </div>
-
-      <div class="pt-[1%]  pb-[1%]">
-        <i class="fas fa-clock mr-[1%] text-white"></i>
-        <span class="mx-[1%] text-white">Viernes:</span>
-        <span class="mx-[1%] text-white">12:30 a Cierre</span>
-      </div>
-
-      <div class="pt-[1%]  pb-[1%]">
-        <i class="fas fa-clock mr-[1%] text-white"></i>
-        <span class="mx-[1%] text-white">Sábado:</span>
-        <span class="mx-[1%] text-white">12:30 a Cierre</span>
-      </div>
-
-      <div class="pt-[1%] pb-[2%]">
-        <i class="fas fa-clock mr-[1%] text-white"></i>
-        <span class="mx-[1%] text-white">Domingo:</span>
-        <span class="mx-[1%] text-white">12:30-18:00</span>
+      <div class="text-center px-[20%] rounded-lg mt-[20%] md:mt-[5%] pb-[3%] shadow-lg">
+        <p class="text-white text-xl  md:text-3xl  italic mb-[3%]">
+          "La verdadera receta del éxito en un restaurante no está en la
+          calidad de los platos, sino en la pasión por servir y crear
+          experiencias memorables para cada comensal"
+        </p>
+        <span class="block text-right text-white sm:text-xs md:text-lg lg:text-1xl">- Rafael Cordón</span>
       </div>
     </div>
   </main>
-
-
   <footer class="w-full bg-black text-center text-white py-8 mt-auto">
     <div class="flex flex-col md:flex-row justify-between items-center px-4 md:px-20">
       <!-- Redes Sociales -->
@@ -170,7 +145,6 @@
     </div>
   </footer>
 
-
   <script>
     function transitionAndRedirect(url) {
       const expandDiv = document.createElement('div');
@@ -180,7 +154,7 @@
       expandDiv.style.left = '0';
       expandDiv.style.width = '0';
       expandDiv.style.height = '100vh';
-      expandDiv.style.backgroundImage = "url('../img/fondo_nav.jpeg')";
+      expandDiv.style.backgroundImage = "url('img/fondo_nav.jpeg')";
       expandDiv.style.backgroundSize = 'cover';
       expandDiv.style.backgroundPosition = 'center';
       document.body.appendChild(expandDiv);
@@ -195,7 +169,6 @@
       transitionAndRedirect('./navegador.html');
     });
   </script>
-
 </body>
 
 </html>

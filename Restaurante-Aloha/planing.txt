@@ -1,0 +1,29 @@
+-NAVEGADOR
+	-móvil (done)
+
+	-portátil(done)
+-concepto 
+	-móvil (done)
+	-portátil(done)
+-bodegas
+	-móvil (espera de fotos)
+	-portátil (espera de fotos)
+-especialiades
+	-móvil (espera de fotos)
+	-portátil (espera de fotos)
+-contacto
+	-móvil (done)
+	-portátil (done)
+-main
+	-móvil (done)
+	-portatil (done)
+
+-catering
+	-móvil (done espera de nuevas fotos)
+	-portatil (done espera de nuevas fotos)
+
+
+
+Tiempo real siempre ira antes si esta preparado 
+cfs planifica grupos de procesos, RR 
+target latency solo afecta a cfs
